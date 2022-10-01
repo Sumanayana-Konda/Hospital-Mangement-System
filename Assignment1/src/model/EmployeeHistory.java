@@ -11,33 +11,33 @@ import java.util.ArrayList;
  */
 public class EmployeeHistory {
  
-    private ArrayList<Product> history;
+    private ArrayList<ProductDetails> historyArrayList;
     
     
     
     public EmployeeHistory(){
-        this.history = new ArrayList<Product>();
+        this.historyArrayList = new ArrayList<ProductDetails>();
         
     }
 
-    public ArrayList<Product> getHistory() {
-        return history;
+    public ArrayList<ProductDetails> getHistoryArrayList() {
+        return historyArrayList;
     }
 
-    public void setHistory(ArrayList<Product> history) {
-        this.history = history;
+    public void setHistoryArrayList(ArrayList<ProductDetails> historyArrayList) {
+        this.historyArrayList = historyArrayList;
     }
-    public Product addNewEmployee(Product product){
-       // Product newEmployee = new Product();
-        history.add(product);
-        return product;
+    public ProductDetails addNewEmployee(ProductDetails productdetails){
+       // ProductDetails newEmployee = new ProductDetails();
+        historyArrayList.add(productdetails);
+        return productdetails;
     }
     public int sizeArraylist(){
-        return history.size();
+        return historyArrayList.size();
     }
     
     public void eraseElement(int i){
-        history.remove(i);
+        historyArrayList.remove(i);
         
     }
     
