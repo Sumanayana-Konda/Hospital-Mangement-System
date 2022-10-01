@@ -6,7 +6,7 @@ package ui;
 
 import javax.swing.JOptionPane;
 import model.EmployeeHistory;
-import model.Product;
+import model.ProductDetails;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -31,13 +31,13 @@ public class ViewJPanel extends javax.swing.JPanel {
      * Creates new form ViewJPanel
      */
     
-    EmployeeHistory history;
-    Product product = new Product();
-    public ViewJPanel(EmployeeHistory history) {
+    EmployeeHistory historyArrayList;
+    ProductDetails productdetails = new ProductDetails();
+    public ViewJPanel(EmployeeHistory historyArrayList) {
         initComponents();
         
        
-        this.history = history;
+        this.historyArrayList = historyArrayList;
        
     }
 
@@ -136,7 +136,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         jCell_Phone_Number.setText("Cell Phone Number:");
 
         jSearch.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jSearch.setText("SEARCH");
+        jSearch.setText("SEARCH PROFILE");
         jSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSearchActionPerformed(evt);
@@ -147,7 +147,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         jLabel1.setText("Enter Phone Number to be searched:");
 
         jDelete.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jDelete.setText("DELETE");
+        jDelete.setText(" DELETE PROFILE");
         jDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDeleteActionPerformed(evt);
@@ -315,11 +315,11 @@ public class ViewJPanel extends javax.swing.JPanel {
         String To_Delete = jNameSearch.getText();
         boolean test = false;
         int i = 0;
-        for (Product product : history.getHistory())
+        for (ProductDetails productdetails : historyArrayList.getHistoryArrayList())
         {
-           if (String.valueOf(product.getPhone_Number()).equals(To_Delete))
+           if (String.valueOf(productdetails.getPhone_Number()).equals(To_Delete))
            {  
-        history.eraseElement(i);
+        historyArrayList.eraseElement(i);
         test = true;
         jTextName.setText("");
         jTextEmployee_ID.setText("");
@@ -347,12 +347,12 @@ public class ViewJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         try{
-           Product pphoto=new Product();
-           for(Product product:history.getHistory())
+           ProductDetails pphoto=new ProductDetails();
+           for(ProductDetails productdetails:historyArrayList.getHistoryArrayList())
         {
-        if(String.valueOf(product.getPhone_Number()).equals(jNameSearch.getText()))
+        if(String.valueOf(productdetails.getPhone_Number()).equals(jNameSearch.getText()))
         {
-            pphoto=product;
+            pphoto=productdetails;
             break;
         }
         }
@@ -406,28 +406,28 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jTitle;
     // End of variables declaration//GEN-END:variables
 
-private void displayProduct(Product product){
+private void displayProduct(ProductDetails productdetails){
     
-    jTextName.setText(product.getName());
-    jTextEmployee_ID.setText(product.getEmployee_ID());
-    jTextAge.setText(String.valueOf(product.getAge()));
-    jTextGender.setText(product.getGender());
-    jTextCell_Phone_Number.setText(product.getPhone_Number());
-    jTextEmail_Address.setText(product.getEmail());
-    jTextLevel.setText(product.getLevel());
-    jTextPosition_Title.setText(product.getPosition_Title());
-    jTextStart_Date.setText(product.getStart_Date());
-    jTextTeam_Info.setText(product.getTeam_info());  
+    jTextName.setText(productdetails.getName());
+    jTextEmployee_ID.setText(productdetails.getEmployee_ID());
+    jTextAge.setText(String.valueOf(productdetails.getAge()));
+    jTextGender.setText(productdetails.getGender());
+    jTextCell_Phone_Number.setText(productdetails.getPhone_Number());
+    jTextEmail_Address.setText(productdetails.getEmail());
+    jTextLevel.setText(productdetails.getLevel());
+    jTextPosition_Title.setText(productdetails.getPosition_Title());
+    jTextStart_Date.setText(productdetails.getStart_Date());
+    jTextTeam_Info.setText(productdetails.getTeam_info());  
     
 }
 
     private void search_list(String a) {
       boolean test = false;
-        for (Product product : history.getHistory()){
+        for (ProductDetails productdetails : historyArrayList.getHistoryArrayList()){
          
-           if (String.valueOf(product.getPhone_Number()).equals(a))
+           if (String.valueOf(productdetails.getPhone_Number()).equals(a))
            {  
-    displayProduct(product);
+    displayProduct(productdetails);
     test = true;
     break;
            }
