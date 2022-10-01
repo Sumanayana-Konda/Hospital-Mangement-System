@@ -293,7 +293,7 @@
     <Component class="javax.swing.JButton" name="jSave">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="10" style="1"/>
+          <Font name="Times New Roman" size="13" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SAVE"/>
       </Properties>
@@ -311,6 +311,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jUpload">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Upload"/>
       </Properties>
       <Events>
