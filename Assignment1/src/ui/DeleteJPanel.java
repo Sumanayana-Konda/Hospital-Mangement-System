@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import model.EmployeeHistory;
-import model.Product;
+import model.ProductDetails;
 
 /**
  *
@@ -26,11 +26,11 @@ public class DeleteJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DeleteJPanel
      */
-    EmployeeHistory history;
-    Product product = new Product();
-    public DeleteJPanel(EmployeeHistory history) {
+    EmployeeHistory historyArrayList;
+    ProductDetails productdetails = new ProductDetails();
+    public DeleteJPanel(EmployeeHistory historyArrayList) {
         initComponents();
-        this.history = history;
+        this.historyArrayList = historyArrayList;
         jTextName1.setName("Name");
         jTextEmployee_ID1.setName("Employee_ID");
         jTextGender.setName("Gender");
@@ -86,13 +86,15 @@ public class DeleteJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Update");
 
-        jSearch.setText("SEARCH");
+        jSearch.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jSearch.setText("SEARCH PROFILE");
         jSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSearchActionPerformed(evt);
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jLabel2.setText("Phone Number to be Updated:");
 
         jAge.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -146,13 +148,15 @@ public class DeleteJPanel extends javax.swing.JPanel {
         jEmail_Address.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jEmail_Address.setText("Email Address:");
 
-        jSave.setText("UPDATE");
+        jSave.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jSave.setText("UPDATE PROFILE");
         jSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSaveActionPerformed(evt);
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jLabel3.setText("Picture:");
 
         jTextName1.addActionListener(new java.awt.event.ActionListener() {
@@ -161,6 +165,7 @@ public class DeleteJPanel extends javax.swing.JPanel {
             }
         });
 
+        jView_Image.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jView_Image.setText("Update Image");
         jView_Image.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +242,7 @@ public class DeleteJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addGap(46, 46, 46)
                     .addComponent(jNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(408, Short.MAX_VALUE)))
+                    .addContainerGap(419, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,7 +309,7 @@ public class DeleteJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2))
-                    .addContainerGap(594, Short.MAX_VALUE)))
+                    .addContainerGap(593, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -325,7 +330,7 @@ public class DeleteJPanel extends javax.swing.JPanel {
 
     private void jSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSaveActionPerformed
         // TODO add your handling code here:
-        //Product product = history.addNewEmployee();
+        //Product productdetails = historyArrayList.addNewEmployee();
         
         JTextField[] VARIABLE_CONSTANTS = {jTextName1,jTextEmployee_ID1,jTextAge,jTextGender,jTextStart_Date,jTextLevel,
             jTextTeam_Info,jTextPosition_Title,jTextCell_Phone_Number,jTextEmail_Address};
@@ -345,20 +350,20 @@ public class DeleteJPanel extends javax.swing.JPanel {
         if(validated){
         System.out.println("entered if Validated");
         String Name_Searched = jNameSearch.getText();
-        for (Product product : history.getHistory()){
-           if (String.valueOf(product.getPhone_Number()).equals(jNameSearch.getText()))
+        for (ProductDetails productdetails : historyArrayList.getHistoryArrayList()){
+           if (String.valueOf(productdetails.getPhone_Number()).equals(jNameSearch.getText()))
            {  
         int Age = Integer.parseInt(jTextAge.getText());
-        product.setName(jTextName1.getText());
-        product.setEmployee_ID(jTextEmployee_ID1.getText());
-        product.setGender(jTextGender.getText());
-        product.setLevel(jTextLevel.getText());
-        product.setAge(Age);
-        product.setPosition_Title(jTextPosition_Title.getText());
-        product.setStart_Date(jTextStart_Date.getText());
-        product.setTeam_info(jTextTeam_Info.getText());
-        product.setPhone_Number(jTextCell_Phone_Number.getText());
-        product.setEmail(jTextEmail_Address.getText());
+        productdetails.setName(jTextName1.getText());
+        productdetails.setEmployee_ID(jTextEmployee_ID1.getText());
+        productdetails.setGender(jTextGender.getText());
+        productdetails.setLevel(jTextLevel.getText());
+        productdetails.setAge(Age);
+        productdetails.setPosition_Title(jTextPosition_Title.getText());
+        productdetails.setStart_Date(jTextStart_Date.getText());
+        productdetails.setTeam_info(jTextTeam_Info.getText());
+        productdetails.setPhone_Number(jTextCell_Phone_Number.getText());
+        productdetails.setEmail(jTextEmail_Address.getText());
         JOptionPane.showMessageDialog(this, "Successfully Updated");
         jTextName1.setText("");
         jTextEmployee_ID1.setText("");
@@ -386,8 +391,8 @@ public class DeleteJPanel extends javax.swing.JPanel {
     private void jView_ImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jView_ImageActionPerformed
         // TODO add your handling code here:
         
-        for (Product product : history.getHistory()){
-           if (String.valueOf(product.getPhone_Number()).equals(jNameSearch.getText()))
+        for (ProductDetails productdetails : historyArrayList.getHistoryArrayList()){
+           if (String.valueOf(productdetails.getPhone_Number()).equals(jNameSearch.getText()))
            { 
         
         JFileChooser fileUploader = new JFileChooser();
@@ -406,8 +411,8 @@ public class DeleteJPanel extends javax.swing.JPanel {
                 ByteArrayOutputStream byteArrayOs = new ByteArrayOutputStream();
                 ImageIO.write(bufferedImageObj, "jpg", byteArrayOs);
                 byte[] photoBytes = byteArrayOs.toByteArray();
-                product.setPhoto(photoBytes);
-               // history.getHistory().add(product);
+                productdetails.setPhoto(photoBytes);
+               // historyArrayList.getHistoryArrayList().add(productdetails);
                 JOptionPane.showMessageDialog(fileUploader, "Photo Uploaded Successfully");
             } catch(IOException e) {
                e.printStackTrace();
@@ -417,27 +422,27 @@ public class DeleteJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jView_ImageActionPerformed
 
-    private void displayProduct(Product product){
+    private void displayProduct(ProductDetails productdetails){
     
-    jTextName1.setText(product.getName());
-    jTextEmployee_ID1.setText(product.getEmployee_ID());
-    jTextAge.setText(String.valueOf(product.getAge()));
-    jTextGender.setText(product.getGender());
-    jTextCell_Phone_Number.setText(product.getPhone_Number());
-    jTextEmail_Address.setText(product.getEmail());
-    jTextLevel.setText(product.getLevel());
-    jTextPosition_Title.setText(product.getPosition_Title());
-    jTextStart_Date.setText(product.getStart_Date());
-    jTextTeam_Info.setText(product.getTeam_info());  
+    jTextName1.setText(productdetails.getName());
+    jTextEmployee_ID1.setText(productdetails.getEmployee_ID());
+    jTextAge.setText(String.valueOf(productdetails.getAge()));
+    jTextGender.setText(productdetails.getGender());
+    jTextCell_Phone_Number.setText(productdetails.getPhone_Number());
+    jTextEmail_Address.setText(productdetails.getEmail());
+    jTextLevel.setText(productdetails.getLevel());
+    jTextPosition_Title.setText(productdetails.getPosition_Title());
+    jTextStart_Date.setText(productdetails.getStart_Date());
+    jTextTeam_Info.setText(productdetails.getTeam_info());  
     
 }
 
     private void search_list(String a) {
         boolean test = false;
-       for (Product product : history.getHistory()){
-           if (String.valueOf(product.getPhone_Number()).equals(a))
+       for (ProductDetails productdetails : historyArrayList.getHistoryArrayList()){
+           if (String.valueOf(productdetails.getPhone_Number()).equals(a))
            {  
-    displayProduct(product);
+    displayProduct(productdetails);
     test = true;
            }
            }
