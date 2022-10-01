@@ -5,7 +5,7 @@
 package ui;
 
 import model.EmployeeHistory;
-import model.Product;
+import model.ProductDetails;
 
 /**
  *
@@ -16,16 +16,16 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    EmployeeHistory history;
+    EmployeeHistory historyArrayList;
     
     
-    Product product;
+    ProductDetails productdetails;
     
     
     public MainJFrame() {
         initComponents();
-        history = new EmployeeHistory();
-        product = new Product();
+        historyArrayList = new EmployeeHistory();
+        productdetails = new ProductDetails();
     }
 
     /**
@@ -46,6 +46,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        bCreate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         bCreate.setText("Create");
         bCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,6 +54,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        bView.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         bView.setText("View");
         bView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,6 +62,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        jUpdate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jUpdate.setText("Update");
         jUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +91,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(bView)
                 .addGap(40, 40, 40)
                 .addComponent(jUpdate)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
 
         splitPanel.setLeftComponent(controlpanel);
@@ -122,21 +125,21 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void bCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCreateActionPerformed
         // TODO add your handling code here:
-        CreateJPanel createPanel = new CreateJPanel(history);
+        CreateJPanel createPanel = new CreateJPanel(historyArrayList);
         splitPanel.setRightComponent(createPanel);
     }//GEN-LAST:event_bCreateActionPerformed
 
     private void bViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bViewActionPerformed
 
         // TODO add your handling code here:
-        ViewJPanel viewPanel = new ViewJPanel(history);
+        ViewJPanel viewPanel = new ViewJPanel(historyArrayList);
         splitPanel.setRightComponent(viewPanel);
         
     }//GEN-LAST:event_bViewActionPerformed
 
     private void jUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpdateActionPerformed
         // TODO add your handling code here:
-        DeleteJPanel updatePanel = new DeleteJPanel(history);
+        DeleteJPanel updatePanel = new DeleteJPanel(historyArrayList);
         splitPanel.setRightComponent(updatePanel);
     }//GEN-LAST:event_jUpdateActionPerformed
 
