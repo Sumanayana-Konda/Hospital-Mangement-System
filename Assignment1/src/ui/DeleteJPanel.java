@@ -468,7 +468,7 @@ public class DeleteJPanel extends javax.swing.JPanel {
            // System.out.println("Entered else loop");
             switch (x) {
                 case "Name":
-                    if(!tex.matches("^[a-z ,.'-]+$")){
+                    if(!tex.matches("^[a-zA-z ,.'-]+$")){
                         raiseError = true;
                         error = String.format("Please enter valid values for %s", x);
                     }   break;
