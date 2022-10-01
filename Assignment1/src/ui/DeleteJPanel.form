@@ -105,7 +105,7 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="jNameSearch" min="-2" pref="308" max="-2" attributes="0"/>
-                  <EmptySpace pref="408" max="32767" attributes="0"/>
+                  <EmptySpace pref="419" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -191,7 +191,7 @@
                       <Component id="jNameSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="594" max="32767" attributes="0"/>
+                  <EmptySpace pref="593" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -208,7 +208,10 @@
     </Component>
     <Component class="javax.swing.JButton" name="jSearch">
       <Properties>
-        <Property name="text" type="java.lang.String" value="SEARCH"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="SEARCH PROFILE"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jSearchActionPerformed"/>
@@ -218,6 +221,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="13" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Phone Number to be Updated:"/>
       </Properties>
     </Component>
@@ -336,7 +342,10 @@
     </Component>
     <Component class="javax.swing.JButton" name="jSave">
       <Properties>
-        <Property name="text" type="java.lang.String" value="UPDATE"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="UPDATE PROFILE"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jSaveActionPerformed"/>
@@ -344,6 +353,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="13" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Picture:"/>
       </Properties>
     </Component>
@@ -356,6 +368,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jView_Image">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Update Image"/>
       </Properties>
       <Events>
