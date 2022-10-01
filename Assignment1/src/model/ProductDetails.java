@@ -8,7 +8,7 @@ package model;
  *
  * @author sumanayanakonda
  */
-public class Product {
+public class ProductDetails {
  
     private String Name;
     private String Employee_ID;
