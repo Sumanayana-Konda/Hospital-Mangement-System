@@ -6,7 +6,7 @@ package ui;
 
 import javax.swing.JOptionPane;
 import model.EmployeeHistory;
-import model.Product;
+import model.ProductDetails;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -26,11 +26,11 @@ import java.util.ArrayList;
 public class CreateJPanel extends javax.swing.JPanel {
     
     
-    EmployeeHistory history;
-    Product product = new Product();
-    public CreateJPanel(EmployeeHistory history) {
+    EmployeeHistory historyArrayList;
+    ProductDetails productdetails = new ProductDetails();
+    public CreateJPanel(EmployeeHistory historyArrayList) {
         initComponents();
-        this.history = history;
+        this.historyArrayList = historyArrayList;
         jTextName.setName("Name");
         jTextEmployee_ID.setName("Employee_ID");
         jTextGender.setName("Gender");
@@ -142,7 +142,7 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        jSave.setFont(new java.awt.Font("Times New Roman", 1, 10)); // NOI18N
+        jSave.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jSave.setText("SAVE");
         jSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +153,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Photo:");
 
+        jUpload.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jUpload.setText("Upload");
         jUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -300,18 +301,18 @@ public class CreateJPanel extends javax.swing.JPanel {
         
         int Age = Integer.parseInt(jTextAge.getText());
             
-        history.getHistory().add(product);
-        product.setName(jTextName.getText());
-        product.setEmployee_ID(jTextEmployee_ID.getText());
-        product.setGender(jTextGender.getText());
-        product.setLevel(jTextLevel.getText());
-        product.setAge(Age);
-        product.setPosition_Title(jTextPosition_Title.getText());
-        product.setStart_Date(jTextStart_Date.getText());
-        product.setTeam_info(jTextTeam_Info.getText());
-        product.setPhone_Number(jTextCell_Phone_Number.getText());
-        product.setEmail(jTextEmail_Address.getText());
-        System.out.println(history.getHistory().size());
+        historyArrayList.getHistoryArrayList().add(productdetails);
+        productdetails.setName(jTextName.getText());
+        productdetails.setEmployee_ID(jTextEmployee_ID.getText());
+        productdetails.setGender(jTextGender.getText());
+        productdetails.setLevel(jTextLevel.getText());
+        productdetails.setAge(Age);
+        productdetails.setPosition_Title(jTextPosition_Title.getText());
+        productdetails.setStart_Date(jTextStart_Date.getText());
+        productdetails.setTeam_info(jTextTeam_Info.getText());
+        productdetails.setPhone_Number(jTextCell_Phone_Number.getText());
+        productdetails.setEmail(jTextEmail_Address.getText());
+        System.out.println(historyArrayList.getHistoryArrayList().size());
         JOptionPane.showMessageDialog(this, "New Employee added");
         JOptionPane.showMessageDialog(this, "Press Create again to enter a New Employee");
       
@@ -337,8 +338,8 @@ public class CreateJPanel extends javax.swing.JPanel {
                 ByteArrayOutputStream byteArrayOs = new ByteArrayOutputStream();
                 ImageIO.write(bufferedImageObj, "jpg", byteArrayOs);
                 byte[] photoBytes = byteArrayOs.toByteArray();
-                product.setPhoto(photoBytes);
-               // history.getHistory().add(product);
+                productdetails.setPhoto(photoBytes);
+               // historyArrayList.getHistoryArrayList().add(productdetails);
                 JOptionPane.showMessageDialog(fileUploader, "Photo Uploaded Successfully");
             } catch(IOException e) {
                e.printStackTrace();
@@ -369,9 +370,9 @@ public boolean validateData(JComponent input)
                     }   break;
                 case "Phone_Number":
                     
-                    for (Product product : history.getHistory())
+                    for (ProductDetails productdetails : historyArrayList.getHistoryArrayList())
                   {
-                   if (String.valueOf(product.getPhone_Number()).equals(tex))
+                   if (String.valueOf(productdetails.getPhone_Number()).equals(tex))
                   {
                    raiseError = true;
                     Merror = String.format("Already exists. Enter a new one", x);
