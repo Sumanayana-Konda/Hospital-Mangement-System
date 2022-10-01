@@ -24,8 +24,8 @@ import java.util.ArrayList;
  * @author sumanayanakonda
  */
 public class CreateJPanel extends javax.swing.JPanel {
-
-
+    
+    
     EmployeeHistory history;
     Product product = new Product();
     public CreateJPanel(EmployeeHistory history) {
