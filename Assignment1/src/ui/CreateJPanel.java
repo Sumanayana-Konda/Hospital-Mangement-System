@@ -321,7 +321,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         productdetails.setLevel(jTextLevel.getText());
         productdetails.setAge(Age);
         productdetails.setPosition_Title(jTextPosition_Title.getText());
-        productdetails.setStart_Date(sanju.format(jDateChooser.getDate()));
+        productdetails.setStart_Date(jDateChooser.getDate());
         productdetails.setTeam_info(jTextTeam_Info.getText());
         productdetails.setPhone_Number(jTextCell_Phone_Number.getText());
         productdetails.setEmail(jTextEmail_Address.getText());

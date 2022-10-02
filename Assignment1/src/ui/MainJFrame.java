@@ -42,12 +42,13 @@ public class MainJFrame extends javax.swing.JFrame {
         bCreate = new javax.swing.JButton();
         bView = new javax.swing.JButton();
         jUpdate = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         workarea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bCreate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        bCreate.setText("Create");
+        bCreate.setText("Create Profile");
         bCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCreateActionPerformed(evt);
@@ -55,7 +56,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         bView.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        bView.setText("View");
+        bView.setText("Search/Delete Profile");
         bView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bViewActionPerformed(evt);
@@ -63,10 +64,18 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         jUpdate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jUpdate.setText("Update");
+        jUpdate.setText("Update Profile");
         jUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jUpdateActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jButton1.setText("View all Profiles");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -75,23 +84,26 @@ public class MainJFrame extends javax.swing.JFrame {
         controlpanelLayout.setHorizontalGroup(
             controlpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlpanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(controlpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(bCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addGroup(controlpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bView)
+                    .addComponent(bCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         controlpanelLayout.setVerticalGroup(
             controlpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlpanelLayout.createSequentialGroup()
-                .addGap(223, 223, 223)
+                .addGap(211, 211, 211)
                 .addComponent(bCreate)
-                .addGap(39, 39, 39)
+                .addGap(35, 35, 35)
                 .addComponent(bView)
-                .addGap(40, 40, 40)
+                .addGap(38, 38, 38)
                 .addComponent(jUpdate)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jButton1)
+                .addContainerGap(194, Short.MAX_VALUE))
         );
 
         splitPanel.setLeftComponent(controlpanel);
@@ -143,6 +155,12 @@ public class MainJFrame extends javax.swing.JFrame {
         splitPanel.setRightComponent(updatePanel);
     }//GEN-LAST:event_jUpdateActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ReadJPanel readPanel = new ReadJPanel(historyArrayList);
+        splitPanel.setRightComponent(readPanel);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -182,6 +200,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton bCreate;
     private javax.swing.JButton bView;
     private javax.swing.JPanel controlpanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jUpdate;
     private javax.swing.JSplitPane splitPanel;
     private javax.swing.JPanel workarea;

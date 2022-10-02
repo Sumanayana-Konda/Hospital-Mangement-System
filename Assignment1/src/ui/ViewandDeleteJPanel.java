@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -407,7 +408,7 @@ public class ViewandDeleteJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
 private void displayProduct(ProductDetails productdetails){
-    
+    SimpleDateFormat sanju = new SimpleDateFormat("MMM d, y");
     jTextName.setText(productdetails.getName());
     jTextEmployee_ID.setText(productdetails.getEmployee_ID());
     jTextAge.setText(String.valueOf(productdetails.getAge()));
@@ -416,7 +417,7 @@ private void displayProduct(ProductDetails productdetails){
     jTextEmail_Address.setText(productdetails.getEmail());
     jTextLevel.setText(productdetails.getLevel());
     jTextPosition_Title.setText(productdetails.getPosition_Title());
-    jTextStart_Date.setText(productdetails.getStart_Date());
+    jTextStart_Date.setText(sanju.format(productdetails.getStart_Date()));
     jTextTeam_Info.setText(productdetails.getTeam_info());  
     
 }

@@ -358,7 +358,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         productdetails.setLevel(jTextLevel.getText());
         productdetails.setAge(Age);
         productdetails.setPosition_Title(jTextPosition_Title.getText());
-        productdetails.setStart_Date(sanju.format(jDateChooser1.getDate()));
+        productdetails.setStart_Date(jDateChooser1.getDate());
         productdetails.setTeam_info(jTextTeam_Info.getText());
         productdetails.setPhone_Number(jTextCell_Phone_Number.getText());
         productdetails.setEmail(jTextEmail_Address.getText());
@@ -369,7 +369,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         jTextLevel.setText("");
         jTextAge.setText("");
         jTextPosition_Title.setText("");
-      //  jTextStart_Date.setText("");
+        jDateChooser1.setDate(null);
         jTextTeam_Info.setText("");
         jTextCell_Phone_Number.setText("");
         jTextEmail_Address.setText("");

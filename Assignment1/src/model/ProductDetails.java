@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
+import java.util.*;
 /**
  *
  * @author sumanayanakonda
@@ -14,7 +14,15 @@ public class ProductDetails {
     private String Employee_ID;
     private int Age;
     private String Gender;
-   private String Start_Date;
+   private  Date Start_Date;
+
+    public Date getStart_Date() {
+        return Start_Date;
+    }
+
+    public void setStart_Date(Date Start_Date) {
+        this.Start_Date = Start_Date;
+    }
     private String Level;
     private String Team_info;
     private String Position_Title;
@@ -62,13 +70,7 @@ public class ProductDetails {
         this.Gender = Gender;
     }
 
-   public String getStart_Date() {
-        return Start_Date;
-    }
-
-    public void setStart_Date(String Start_Date) {
-        this.Start_Date = Start_Date;
-    }
+   
 
     public String getLevel() {
         return Level;
