@@ -5,7 +5,7 @@
 package ui;
 
 import java.text.SimpleDateFormat;
-import model.EmployeeHistory;
+import model.EmployeeData;
 import model.ProductDetails;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -17,9 +17,9 @@ public class ReadJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ReadJPanel
      */
-    EmployeeHistory historyArrayList;
+    EmployeeData historyArrayList;
     ProductDetails productdetails = new ProductDetails();
-    public ReadJPanel(EmployeeHistory historyArrayList) {
+    public ReadJPanel(EmployeeData historyArrayList) {
         initComponents();
         this.historyArrayList = historyArrayList;
         TableFilling();
@@ -37,8 +37,10 @@ public class ReadJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jEmployeeTable = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
 
+        jEmployeeTable.setBackground(new java.awt.Color(204, 204, 204));
         jEmployeeTable.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jEmployeeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

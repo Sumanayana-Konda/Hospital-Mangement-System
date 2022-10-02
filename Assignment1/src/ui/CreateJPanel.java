@@ -5,7 +5,7 @@
 package ui;
 
 import javax.swing.JOptionPane;
-import model.EmployeeHistory;
+import model.EmployeeData;
 import model.ProductDetails;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -27,9 +27,9 @@ import java.util.ArrayList;
 public class CreateJPanel extends javax.swing.JPanel {
     
     
-    EmployeeHistory historyArrayList;
+    EmployeeData historyArrayList;
     ProductDetails productdetails = new ProductDetails();
-    public CreateJPanel(EmployeeHistory historyArrayList) {
+    public CreateJPanel(EmployeeData historyArrayList) {
         initComponents();
         this.historyArrayList = historyArrayList;
         jTextName.setName("Name");
@@ -42,6 +42,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         jTextAge.setName("Age");
         jTextCell_Phone_Number.setName("Phone_Number");
         jTextPosition_Title.setName("Position_Title");
+        
     }
 
     /**
@@ -89,6 +90,8 @@ public class CreateJPanel extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setText("Employee ID");
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jTitle.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTitle.setText("CREATE");
@@ -127,23 +130,38 @@ public class CreateJPanel extends javax.swing.JPanel {
         jEmail_Address.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jEmail_Address.setText("Email Address:");
 
+        jTextName.setBackground(new java.awt.Color(204, 204, 204));
         jTextName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextNameActionPerformed(evt);
             }
         });
 
+        jTextEmployee_ID.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextAge.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextGender.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextLevel.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextTeam_Info.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextPosition_Title.setBackground(new java.awt.Color(204, 204, 204));
         jTextPosition_Title.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextPosition_TitleActionPerformed(evt);
             }
         });
 
+        jTextCell_Phone_Number.setBackground(new java.awt.Color(204, 204, 204));
         jTextCell_Phone_Number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextCell_Phone_NumberActionPerformed(evt);
             }
         });
+
+        jTextEmail_Address.setBackground(new java.awt.Color(204, 204, 204));
 
         jSave.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jSave.setText("SAVE");
@@ -156,6 +174,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setText("Photo:");
 
+        jUpload.setBackground(new java.awt.Color(204, 204, 204));
         jUpload.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jUpload.setText("Upload");
         jUpload.addActionListener(new java.awt.event.ActionListener() {
@@ -212,10 +231,10 @@ public class CreateJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jCell_Phone_Number)
                                     .addComponent(jEmail_Address))
-                                .addGap(57, 57, 57)
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextCell_Phone_Number)
-                                    .addComponent(jTextEmail_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jTextCell_Phone_Number, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
+                                    .addComponent(jTextEmail_Address))))))
                 .addGap(0, 125, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -299,7 +318,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         jTextTeam_Info,jTextPosition_Title,jTextCell_Phone_Number,jTextEmail_Address};
         boolean validated = false;
         for(JTextField field: VARIABLE_CONSTANTS){
-            if(!validateData(field)){
+            if(!validation(field)){
                 validated = false;
                 break;
             }
@@ -361,7 +380,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_jUploadActionPerformed
-public boolean validateData(JComponent input) 
+public boolean validation(JComponent input) 
 {       
         String x = input.getName();
         String Merror="";
@@ -388,7 +407,8 @@ public boolean validateData(JComponent input)
                    if (String.valueOf(productdetails.getPhone_Number()).equals(tex))
                   {
                    raiseError = true;
-                    Merror = String.format("Already exists. Enter a new one", x);
+                    Merror = String.format("Phone Number Already exists. Enter a new one", x);
+                    break;
                      }
                     if(!tex.matches("^[0-9]{10}")){
                         raiseError = true;
@@ -402,14 +422,22 @@ public boolean validateData(JComponent input)
                    if (String.valueOf(productdetails.getEmployee_ID()).equals(tex))
                   {
                    raiseError = true;
-                    Merror = String.format("Already exists. Enter a new one", x);
+                    Merror = String.format("Employee ID Already exists. Enter a new one", x);
                      }
                     }    break;
                 case "Email":
+                   for (ProductDetails productdetails : historyArrayList.getHistoryArrayList())
+                  {
+                   if (String.valueOf(productdetails.getEmail()).equals(tex))
+                  {
+                  raiseError = true;
+                  Merror = String.format("Email already Exists. Enter a new one");
+                  break;
+                  } 
                     if(!tex.matches("^(.+)@(.+)$")){
                         raiseError = true;
                         Merror = String.format("Enter correct %s", x);
-                    }   break;
+                    } }  break;
                    
                 default:
                     break;

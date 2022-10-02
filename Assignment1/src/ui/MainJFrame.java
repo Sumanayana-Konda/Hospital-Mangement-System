@@ -4,7 +4,7 @@
  */
 package ui;
 
-import model.EmployeeHistory;
+import model.EmployeeData;
 import model.ProductDetails;
 
 /**
@@ -16,7 +16,7 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    EmployeeHistory historyArrayList;
+    EmployeeData historyArrayList;
     
     
     ProductDetails productdetails;
@@ -24,7 +24,7 @@ public class MainJFrame extends javax.swing.JFrame {
     
     public MainJFrame() {
         initComponents();
-        historyArrayList = new EmployeeHistory();
+        historyArrayList = new EmployeeData();
         productdetails = new ProductDetails();
     }
 
@@ -42,11 +42,14 @@ public class MainJFrame extends javax.swing.JFrame {
         bCreate = new javax.swing.JButton();
         bView = new javax.swing.JButton();
         jUpdate = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jViewAll = new javax.swing.JButton();
         workarea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        controlpanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        bCreate.setBackground(new java.awt.Color(204, 204, 204));
         bCreate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         bCreate.setText("Create Profile");
         bCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +58,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        bView.setBackground(new java.awt.Color(204, 204, 204));
         bView.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         bView.setText("Search/Delete Profile");
         bView.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +67,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        jUpdate.setBackground(new java.awt.Color(204, 204, 204));
         jUpdate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jUpdate.setText("Update Profile");
         jUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -71,11 +76,12 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jButton1.setText("View all Profiles");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jViewAll.setBackground(new java.awt.Color(204, 204, 204));
+        jViewAll.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jViewAll.setText("View all Profiles");
+        jViewAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jViewAllActionPerformed(evt);
             }
         });
 
@@ -86,7 +92,7 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(controlpanelLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(controlpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bView)
                     .addComponent(bCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -102,11 +108,13 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jUpdate)
                 .addGap(34, 34, 34)
-                .addComponent(jButton1)
+                .addComponent(jViewAll)
                 .addContainerGap(194, Short.MAX_VALUE))
         );
 
         splitPanel.setLeftComponent(controlpanel);
+
+        workarea.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout workareaLayout = new javax.swing.GroupLayout(workarea);
         workarea.setLayout(workareaLayout);
@@ -155,11 +163,11 @@ public class MainJFrame extends javax.swing.JFrame {
         splitPanel.setRightComponent(updatePanel);
     }//GEN-LAST:event_jUpdateActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jViewAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jViewAllActionPerformed
         // TODO add your handling code here:
         ReadJPanel readPanel = new ReadJPanel(historyArrayList);
         splitPanel.setRightComponent(readPanel);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jViewAllActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,8 +208,8 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton bCreate;
     private javax.swing.JButton bView;
     private javax.swing.JPanel controlpanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jUpdate;
+    private javax.swing.JButton jViewAll;
     private javax.swing.JSplitPane splitPanel;
     private javax.swing.JPanel workarea;
     // End of variables declaration//GEN-END:variables

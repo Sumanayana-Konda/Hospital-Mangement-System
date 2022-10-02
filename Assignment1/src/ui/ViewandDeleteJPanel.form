@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -17,77 +22,72 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="260" max="-2" attributes="0"/>
-                      <Component id="jSearch" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                      <Component id="jDelete" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="324" max="-2" attributes="0"/>
-                      <Component id="jTitle" min="-2" pref="114" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jContact_Info" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jPosition_Title" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTeam_Info" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLevel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jStart_Date" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jGender" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jAge" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jEmployee_ID" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jName" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jTextTeam_Info" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextLevel" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextStart_Date" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextEmployee_ID" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextName" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextPosition_Title" alignment="0" pref="505" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTextGender" max="32767" attributes="0"/>
-                                          <Component id="jTextAge" min="-2" pref="505" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="jSearch" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="jDelete" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="324" max="-2" attributes="0"/>
+                          <Component id="jTitle" min="-2" pref="114" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jPosition_Title" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTeam_Info" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLevel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jStart_Date" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jGender" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jAge" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jEmployee_ID" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jName" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jCell_Phone_Number" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jEmail_Address" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jContact_Info" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jCell_Phone_Number" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jTextTeam_Info" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextLevel" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextStart_Date" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextEmployee_ID" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextName" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextPosition_Title" alignment="0" pref="505" max="32767" attributes="0"/>
+                                      <Component id="jTextCell_Phone_Number" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextEmail_Address" max="32767" attributes="0"/>
-                                  <Component id="jTextCell_Phone_Number" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextGender" max="32767" attributes="0"/>
+                                      <Component id="jTextAge" min="-2" pref="505" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jPhoto" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jNameSearch" min="-2" pref="361" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jNameSearch" min="-2" pref="308" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jEmail_Address" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jTextEmail_Address" min="-2" pref="505" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="125" max="32767" attributes="0"/>
@@ -158,7 +158,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jEmail_Address" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jEmail_Address" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextEmail_Address" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -189,6 +189,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextName">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextNameActionPerformed"/>
       </Events>
@@ -202,6 +207,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextEmployee_ID">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jGender">
       <Properties>
@@ -220,6 +230,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextStart_Date">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLevel">
       <Properties>
@@ -230,6 +245,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextLevel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jTeam_Info">
       <Properties>
@@ -240,6 +260,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextTeam_Info">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jPosition_Title">
       <Properties>
@@ -250,6 +275,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextPosition_Title">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextPosition_TitleActionPerformed"/>
       </Events>
@@ -273,6 +303,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextCell_Phone_Number">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextCell_Phone_NumberActionPerformed"/>
       </Events>
@@ -294,6 +329,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextEmail_Address">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jSearch">
       <Properties>
@@ -307,13 +347,18 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jNameSearch">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="13" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Enter Phone Number to be searched:"/>
+        <Property name="text" type="java.lang.String" value="Enter Phone Number/Employee ID: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jDelete">
@@ -328,8 +373,18 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextGender">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextAge">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -341,6 +396,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jPhoto">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="13" style="1"/>
         </Property>

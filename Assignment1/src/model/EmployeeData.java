@@ -9,13 +9,13 @@ import java.util.ArrayList;
  *
  * @author sumanayanakonda
  */
-public class EmployeeHistory {
+public class EmployeeData {
  
     private ArrayList<ProductDetails> historyArrayList;
     
     
     
-    public EmployeeHistory(){
+    public EmployeeData(){
         this.historyArrayList = new ArrayList<ProductDetails>();
         
     }

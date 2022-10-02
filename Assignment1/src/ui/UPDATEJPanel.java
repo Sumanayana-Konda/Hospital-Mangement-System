@@ -14,7 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import model.EmployeeHistory;
+import model.EmployeeData;
 import model.ProductDetails;
 import java.text.SimpleDateFormat;
 /**
@@ -26,9 +26,9 @@ public class UPDATEJPanel extends javax.swing.JPanel {
     /**
      * Creates new form UPDATEJPanel
      */
-    EmployeeHistory historyArrayList;
+    EmployeeData historyArrayList;
     ProductDetails productdetails = new ProductDetails();
-    public UPDATEJPanel(EmployeeHistory historyArrayList) {
+    public UPDATEJPanel(EmployeeData historyArrayList) {
         initComponents();
         this.historyArrayList = historyArrayList;
         jTextName1.setName("Name");
@@ -36,7 +36,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         jTextGender.setName("Gender");
         jTextLevel.setName("Level");
         jTextTeam_Info.setName("Team_Info");
-       jDateChooser1.setName("Start_Date");
+        jDateChooser1.setName("Start_Date");
         jTextEmail_Address.setName("Email");
         jTextAge.setName("Age");
         jTextCell_Phone_Number.setName("Phone_Number");
@@ -81,6 +81,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         jView_Image = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(800, 600));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -94,8 +95,10 @@ public class UPDATEJPanel extends javax.swing.JPanel {
             }
         });
 
+        jNameSearch.setBackground(new java.awt.Color(204, 204, 204));
+
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        jLabel2.setText("Phone Number to be Updated:");
+        jLabel2.setText("Phone Number/EmployeeID to be Updated:");
 
         jAge.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jAge.setText("Age:");
@@ -103,11 +106,14 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         jGender.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jGender.setText("Gender:");
 
+        jTextGender.setBackground(new java.awt.Color(204, 204, 204));
         jTextGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextGenderActionPerformed(evt);
             }
         });
+
+        jTextAge.setBackground(new java.awt.Color(204, 204, 204));
 
         jStart_Date.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jStart_Date.setText("Start Date:");
@@ -115,12 +121,17 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         jLevel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLevel.setText("Level:");
 
+        jTextLevel.setBackground(new java.awt.Color(204, 204, 204));
+
         jTeam_Info.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jTeam_Info.setText("Team Info:");
+
+        jTextTeam_Info.setBackground(new java.awt.Color(204, 204, 204));
 
         jPosition_Title.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jPosition_Title.setText("Position Title:");
 
+        jTextPosition_Title.setBackground(new java.awt.Color(204, 204, 204));
         jTextPosition_Title.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextPosition_TitleActionPerformed(evt);
@@ -130,6 +141,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         jContact_Info.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jContact_Info.setText("Contact Info:");
 
+        jTextCell_Phone_Number.setBackground(new java.awt.Color(204, 204, 204));
         jTextCell_Phone_Number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextCell_Phone_NumberActionPerformed(evt);
@@ -145,6 +157,8 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         jEmployee_ID.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jEmployee_ID.setText("Employee ID:");
 
+        jTextEmail_Address.setBackground(new java.awt.Color(204, 204, 204));
+
         jEmail_Address.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jEmail_Address.setText("Email Address:");
 
@@ -159,12 +173,16 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jLabel3.setText("Picture:");
 
+        jTextName1.setBackground(new java.awt.Color(204, 204, 204));
         jTextName1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextName1ActionPerformed(evt);
             }
         });
 
+        jTextEmployee_ID1.setBackground(new java.awt.Color(204, 204, 204));
+
+        jView_Image.setBackground(new java.awt.Color(204, 204, 204));
         jView_Image.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jView_Image.setText("Update Image");
         jView_Image.addActionListener(new java.awt.event.ActionListener() {
@@ -177,6 +195,15 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(351, 351, 351)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(jSave)))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -227,31 +254,24 @@ public class UPDATEJPanel extends javax.swing.JPanel {
                                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(299, 299, 299)
-                        .addComponent(jSearch)))
+                        .addComponent(jSearch))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(89, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(351, 351, 351)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
-                        .addComponent(jSave)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(168, 168, 168)
-                    .addComponent(jLabel2)
-                    .addGap(46, 46, 46)
-                    .addComponent(jNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(110, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addGap(74, 74, 74)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
                 .addComponent(jSearch)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -300,13 +320,6 @@ public class UPDATEJPanel extends javax.swing.JPanel {
                 .addGap(39, 39, 39)
                 .addComponent(jSave)
                 .addGap(138, 138, 138))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(69, 69, 69)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2))
-                    .addContainerGap(592, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -334,7 +347,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         boolean validated = false;
         for(JTextField field: VARIABLE_CONSTANTS){
            // System.out.println("Entered for loop in save");
-            if(!validateData(field)){
+            if(!validation(field)){
                 validated = false;
                 break;
             }
@@ -349,7 +362,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         
         String Name_Searched = jNameSearch.getText();
         for (ProductDetails productdetails : historyArrayList.getHistoryArrayList()){
-           if (String.valueOf(productdetails.getPhone_Number()).equals(jNameSearch.getText()))
+           if ((String.valueOf(productdetails.getPhone_Number()).equals(jNameSearch.getText()))||(String.valueOf(productdetails.getEmployee_ID()).equals(jNameSearch.getText())))
            {  
         int Age = Integer.parseInt(jTextAge.getText());
         productdetails.setName(jTextName1.getText());
@@ -373,6 +386,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         jTextTeam_Info.setText("");
         jTextCell_Phone_Number.setText("");
         jTextEmail_Address.setText("");
+        break;
            }
            }
         }
@@ -390,7 +404,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         for (ProductDetails productdetails : historyArrayList.getHistoryArrayList()){
-           if (String.valueOf(productdetails.getPhone_Number()).equals(jNameSearch.getText()))
+           if (String.valueOf(productdetails.getPhone_Number()).equals(jNameSearch.getText())||String.valueOf(productdetails.getEmployee_ID()).equals(jNameSearch.getText()))
            { 
         
         JFileChooser fileUploader = new JFileChooser();
@@ -420,7 +434,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jView_ImageActionPerformed
 
-    private void displayProduct(ProductDetails productdetails){
+    private void displayObject(ProductDetails productdetails){
     
     jTextName1.setText(productdetails.getName());
     jTextEmployee_ID1.setText(productdetails.getEmployee_ID());
@@ -430,7 +444,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
     jTextEmail_Address.setText(productdetails.getEmail());
     jTextLevel.setText(productdetails.getLevel());
     jTextPosition_Title.setText(productdetails.getPosition_Title());
-   //jTextStart_Date.setText(productdetails.getStart_Date());
+   jDateChooser1.setDate(productdetails.getStart_Date());
     jTextTeam_Info.setText(productdetails.getTeam_info());  
     
 }
@@ -438,9 +452,9 @@ public class UPDATEJPanel extends javax.swing.JPanel {
     private void search_list(String a) {
         boolean test = false;
        for (ProductDetails productdetails : historyArrayList.getHistoryArrayList()){
-           if (String.valueOf(productdetails.getPhone_Number()).equals(a))
+           if (String.valueOf(productdetails.getPhone_Number()).equals(a)||String.valueOf(productdetails.getEmployee_ID()).equals(a))
            {  
-    displayProduct(productdetails);
+    displayObject(productdetails);
     test = true;
            }
            }
@@ -449,7 +463,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         }
            }
     
-    public boolean validateData(JComponent input) 
+    public boolean validation(JComponent input) 
 {
     //System.out.println("Entered validate data");
         String x = input.getName();
