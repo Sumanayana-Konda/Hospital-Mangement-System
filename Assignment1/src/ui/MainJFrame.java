@@ -132,14 +132,14 @@ public class MainJFrame extends javax.swing.JFrame {
     private void bViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bViewActionPerformed
 
         // TODO add your handling code here:
-        ViewJPanel viewPanel = new ViewJPanel(historyArrayList);
+        ViewandDeleteJPanel viewPanel = new ViewandDeleteJPanel(historyArrayList);
         splitPanel.setRightComponent(viewPanel);
         
     }//GEN-LAST:event_bViewActionPerformed
 
     private void jUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpdateActionPerformed
         // TODO add your handling code here:
-        DeleteJPanel updatePanel = new DeleteJPanel(historyArrayList);
+        UPDATEJPanel updatePanel = new UPDATEJPanel(historyArrayList);
         splitPanel.setRightComponent(updatePanel);
     }//GEN-LAST:event_jUpdateActionPerformed
 

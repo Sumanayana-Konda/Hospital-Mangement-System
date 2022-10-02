@@ -25,15 +25,15 @@ import java.util.List;
  *
  * @author sumanayanakonda
  */
-public class ViewJPanel extends javax.swing.JPanel {
+public class ViewandDeleteJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ViewJPanel
+     * Creates new form ViewandDeleteJPanel
      */
     
     EmployeeHistory historyArrayList;
     ProductDetails productdetails = new ProductDetails();
-    public ViewJPanel(EmployeeHistory historyArrayList) {
+    public ViewandDeleteJPanel(EmployeeHistory historyArrayList) {
         initComponents();
         
        
@@ -331,13 +331,13 @@ public class ViewJPanel extends javax.swing.JPanel {
         jTextTeam_Info.setText("");
         jTextCell_Phone_Number.setText("");
         jTextEmail_Address.setText("");
-        JOptionPane.showMessageDialog(this, "Deleted Sucessfully"); 
+        JOptionPane.showMessageDialog(this, "Profile Deleted"); 
         break;
            }
         i++;}
         
         if (!test){
-          JOptionPane.showMessageDialog(this, "Not Found");   
+          JOptionPane.showMessageDialog(this, "Number Not Found");   
         }
     
     
@@ -367,7 +367,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         catch (IOException e)
         {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(jPhoto, "Error while displaying Image");
+            JOptionPane.showMessageDialog(jPhoto, "Error Loading the Image");
         }
     
         
@@ -434,7 +434,7 @@ private void displayProduct(ProductDetails productdetails){
            }
         if(!test){
             
-                JOptionPane.showMessageDialog(this, "Not Found");
+                JOptionPane.showMessageDialog(this, "Number Not Found");
             
         }
       
