@@ -52,7 +52,15 @@ public class ReadJPanel extends javax.swing.JPanel {
             new String [] {
                 "Name", "Employee ID", "Age", "Gender", "Start Date", "Level", "Team Info", "Position Title", "Phone Number", "Email"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jEmployeeTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

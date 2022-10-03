@@ -89,6 +89,8 @@ public class ViewandDeleteJPanel extends javax.swing.JPanel {
         jEmail_Address.setText("Email Address:");
 
         jTextName.setBackground(new java.awt.Color(204, 204, 204));
+        jTextName.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextName.setEnabled(false);
         jTextName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextNameActionPerformed(evt);
@@ -99,6 +101,8 @@ public class ViewandDeleteJPanel extends javax.swing.JPanel {
         jAge.setText("Age:");
 
         jTextEmployee_ID.setBackground(new java.awt.Color(204, 204, 204));
+        jTextEmployee_ID.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextEmployee_ID.setEnabled(false);
 
         jGender.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jGender.setText("Gender:");
@@ -107,21 +111,29 @@ public class ViewandDeleteJPanel extends javax.swing.JPanel {
         jStart_Date.setText("Start Date:");
 
         jTextStart_Date.setBackground(new java.awt.Color(204, 204, 204));
+        jTextStart_Date.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextStart_Date.setEnabled(false);
 
         jLevel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLevel.setText("Level:");
 
         jTextLevel.setBackground(new java.awt.Color(204, 204, 204));
+        jTextLevel.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextLevel.setEnabled(false);
 
         jTeam_Info.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jTeam_Info.setText("Team Info:");
 
         jTextTeam_Info.setBackground(new java.awt.Color(204, 204, 204));
+        jTextTeam_Info.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextTeam_Info.setEnabled(false);
 
         jPosition_Title.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jPosition_Title.setText("Position Title:");
 
         jTextPosition_Title.setBackground(new java.awt.Color(204, 204, 204));
+        jTextPosition_Title.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextPosition_Title.setEnabled(false);
         jTextPosition_Title.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextPosition_TitleActionPerformed(evt);
@@ -137,6 +149,8 @@ public class ViewandDeleteJPanel extends javax.swing.JPanel {
         jContact_Info.setText("Contact Info:");
 
         jTextCell_Phone_Number.setBackground(new java.awt.Color(204, 204, 204));
+        jTextCell_Phone_Number.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextCell_Phone_Number.setEnabled(false);
         jTextCell_Phone_Number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextCell_Phone_NumberActionPerformed(evt);
@@ -150,6 +164,8 @@ public class ViewandDeleteJPanel extends javax.swing.JPanel {
         jCell_Phone_Number.setText("Cell Phone Number:");
 
         jTextEmail_Address.setBackground(new java.awt.Color(204, 204, 204));
+        jTextEmail_Address.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextEmail_Address.setEnabled(false);
 
         jSearch.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jSearch.setText("SEARCH PROFILE");
@@ -173,8 +189,12 @@ public class ViewandDeleteJPanel extends javax.swing.JPanel {
         });
 
         jTextGender.setBackground(new java.awt.Color(204, 204, 204));
+        jTextGender.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextGender.setEnabled(false);
 
         jTextAge.setBackground(new java.awt.Color(204, 204, 204));
+        jTextAge.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextAge.setEnabled(false);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setText("View Image:");

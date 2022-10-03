@@ -181,6 +181,8 @@ public class UPDATEJPanel extends javax.swing.JPanel {
         });
 
         jTextEmployee_ID1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextEmployee_ID1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextEmployee_ID1.setEnabled(false);
 
         jView_Image.setBackground(new java.awt.Color(204, 204, 204));
         jView_Image.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -366,7 +368,7 @@ public class UPDATEJPanel extends javax.swing.JPanel {
            {  
         int Age = Integer.parseInt(jTextAge.getText());
         productdetails.setName(jTextName1.getText());
-        productdetails.setEmployee_ID(jTextEmployee_ID1.getText());
+        //productdetails.setEmployee_ID(jTextEmployee_ID1.getText());
         productdetails.setGender(jTextGender.getText());
         productdetails.setLevel(jTextLevel.getText());
         productdetails.setAge(Age);
