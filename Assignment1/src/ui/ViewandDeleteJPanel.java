@@ -300,7 +300,7 @@ public class ViewandDeleteJPanel extends javax.swing.JPanel {
                     .addComponent(jCell_Phone_Number)
                     .addComponent(jTextCell_Phone_Number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jEmail_Address)
                     .addComponent(jTextEmail_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
@@ -370,7 +370,7 @@ public class ViewandDeleteJPanel extends javax.swing.JPanel {
            ProductDetails pphoto=new ProductDetails();
            for(ProductDetails productdetails:historyArrayList.getHistoryArrayList())
         {
-        if(String.valueOf(productdetails.getPhone_Number()).equals(jNameSearch.getText()))
+        if((String.valueOf(productdetails.getEmployee_ID()).equals(jNameSearch.getText()))||(String.valueOf(productdetails.getPhone_Number()).equals(jNameSearch.getText())))
         {
             pphoto=productdetails;
             break;

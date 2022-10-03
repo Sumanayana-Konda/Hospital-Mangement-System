@@ -157,9 +157,9 @@
                   <Component id="jTextCell_Phone_Number" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jEmail_Address" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextEmail_Address" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextEmail_Address" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
