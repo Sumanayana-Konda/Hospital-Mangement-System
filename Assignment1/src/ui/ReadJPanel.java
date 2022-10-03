@@ -61,6 +61,9 @@ public class ReadJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jEmployeeTable.setGridColor(new java.awt.Color(0, 0, 0));
+        jEmployeeTable.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        jEmployeeTable.setSelectionForeground(new java.awt.Color(204, 204, 204));
         jScrollPane1.setViewportView(jEmployeeTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
