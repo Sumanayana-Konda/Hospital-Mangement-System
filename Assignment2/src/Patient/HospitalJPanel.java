@@ -29,17 +29,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class HospitalJPanel extends javax.swing.JPanel {
 Ecosystem e;
-
-    Patients patient;
     /**
      * Creates new form HospitalJPanel
      */
     Patients pa;
-    public HospitalJPanel(Ecosystem e, Patients pat) {
+    public HospitalJPanel(Ecosystem e, Patients pa) {
         initComponents();
         //e = ConfigureASystem.configure();
         this.e = e;
-        this.pa = pat;
+        this.pa = pa;
         TableFilling();
         
     }
@@ -60,6 +58,9 @@ Ecosystem e;
         jView = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        apt = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -100,33 +101,48 @@ Ecosystem e;
 
         jLabel1.setText("DOCTORS");
 
-        jButton1.setText("Select Doctor");
+        jButton1.setText("Select Date");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jLabel2.setText("Book Appointment:");
+
+        jLabel3.setText("Select a Date:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 112, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(apt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(202, 202, 202)
+                            .addComponent(jView)
+                            .addGap(153, 153, 153)
+                            .addComponent(jLabel2))))
+                .addContainerGap(119, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(187, 187, 187))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(202, 202, 202)
-                .addComponent(jView)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(159, 159, 159))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(279, 279, 279))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(383, 383, 383))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(221, 221, 221))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,11 +155,16 @@ Ecosystem e;
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jView))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)))
-                .addGap(97, 97, 97))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(apt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -181,31 +202,46 @@ Ecosystem e;
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please Select a Doctor");
             return;
+    
+        }
+        else{
+        for (Doctors d:e.getDoctorhistory().getDoctorHistoryArrayList()){
+        
+        if(d.getFullName().equals(jDoctors.getValueAt(selectedRow, 0))){
+           for (Patients p : d.getPatienthistory().getPatients()){
+        if(p.getUsername().equals(pa.getUsername()) && p.getPassword().equals(pa.getPassword())){
+        Vital_Signs vt = new Vital_Signs(0, 0, 0, 0, 0);
+        Encounter encounter = new Encounter(vt, apt.getDate(), "", p, d, "");
+        e.getEncounterhistory().addNewEncounter(encounter);
+        return;
+        }
+        else{
+        d.getPatienthistory().addPatients(pa);
+        Vital_Signs vt = new Vital_Signs(0, 0, 0, 0, 0);
+        Encounter encounter = new Encounter(vt, apt.getDate(), "", p, d, "");
+        e.getEncounterhistory().addNewEncounter(encounter);
+        return;
         }
         
+        }
+            
         
-        for(Doctors d : e.getDoctorhistory().getDoctorHistoryArrayList())
-        {
-            if(d.getFullName().equals(String.valueOf(jDoctors.getValueAt(selectedRow, 0))))
-            {
-                for(Patients patient : d.getPatienthistory().getPatients()){
-                    if(patient.getUsername().equals(pa.getUsername())&&patient.getPassword().equals(pa.getPassword())){
-                        JOptionPane.showMessageDialog(this, "Doctor Already Selected Before");
-                    break;}
-                        
-                 d.getPatienthistory().addPatients(pa);
-                 JOptionPane.showMessageDialog(this, "Doctor Selected");}
         
-        }}
+        }
+        } 
        
+        } 
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser apt;
     private javax.swing.JButton jButton1;
     private javax.swing.JTable jDoctors;
     private javax.swing.JTable jHospital;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jView;
