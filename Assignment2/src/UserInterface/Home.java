@@ -73,7 +73,6 @@ public class Home extends javax.swing.JFrame {
         rightPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         userNameTxt.setBackground(new java.awt.Color(153, 204, 255));
-        userNameTxt.setForeground(new java.awt.Color(0, 0, 0));
         userNameTxt.setToolTipText("Username");
         userNameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +82,6 @@ public class Home extends javax.swing.JFrame {
         rightPanel.add(userNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 252, 32));
 
         passwordTxt.setBackground(new java.awt.Color(153, 204, 255));
-        passwordTxt.setForeground(new java.awt.Color(0, 0, 0));
         passwordTxt.setToolTipText("Password");
         passwordTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +117,6 @@ public class Home extends javax.swing.JFrame {
         rightPanel.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, -1, -1));
 
         userRole.setBackground(new java.awt.Color(153, 204, 255));
-        userRole.setForeground(new java.awt.Color(0, 0, 0));
         userRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patient", "Doctor", "Community Admin", "Hospital Admin", "System Admin" }));
         rightPanel.add(userRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 163, 250, 30));
 
