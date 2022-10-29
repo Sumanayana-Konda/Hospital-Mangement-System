@@ -296,25 +296,16 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="First Name :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Last Name :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="DOB :"/>
                   </Properties>
                 </Component>
@@ -322,9 +313,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel4">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="E-mail Id :"/>
                   </Properties>
                 </Component>
@@ -344,17 +332,11 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Gender :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel6">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Line 1 :"/>
                   </Properties>
                 </Component>
@@ -365,9 +347,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Line 2 :"/>
                   </Properties>
                 </Component>
@@ -378,9 +357,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="City :"/>
                   </Properties>
                 </Component>
@@ -391,9 +367,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="State :"/>
                   </Properties>
                 </Component>
@@ -404,9 +377,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Zip Code :"/>
                   </Properties>
                 </Component>
@@ -417,9 +387,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Phone :"/>
                   </Properties>
                 </Component>
@@ -467,9 +434,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Community :"/>
                   </Properties>
                 </Component>
@@ -477,9 +441,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Password :"/>
                   </Properties>
                 </Component>
@@ -488,9 +449,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica" size="18" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Address Information"/>
                   </Properties>
                 </Component>
@@ -498,9 +456,6 @@
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica" size="18" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Personal Information"/>
                   </Properties>

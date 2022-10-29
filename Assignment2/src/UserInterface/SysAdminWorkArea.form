@@ -103,9 +103,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Patients"/>
                   </Properties>
                   <Events>
@@ -116,9 +113,6 @@
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Logout"/>
                   </Properties>
@@ -131,9 +125,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Doctors"/>
                   </Properties>
                   <Events>
@@ -144,9 +135,6 @@
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Hospitals"/>
                   </Properties>
@@ -159,9 +147,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Communities"/>
                   </Properties>
                   <Events>
@@ -173,9 +158,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Cities"/>
                   </Properties>
                   <Events>
@@ -186,9 +168,6 @@
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Encounters"/>
                   </Properties>
@@ -240,9 +219,6 @@
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="36" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Hello,"/>
                   </Properties>

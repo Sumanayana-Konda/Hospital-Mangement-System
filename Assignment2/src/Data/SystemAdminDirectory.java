@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 public class SystemAdminDirectory {
     

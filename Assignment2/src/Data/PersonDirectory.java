@@ -8,7 +8,7 @@ import Model.Person;
 import java.util.*;
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 public class PersonDirectory {
     

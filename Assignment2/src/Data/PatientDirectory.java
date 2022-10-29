@@ -7,7 +7,7 @@ import Model.Patient;
 import java.util.*;
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 public class PatientDirectory {
     

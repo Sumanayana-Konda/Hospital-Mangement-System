@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 public class PatientsDirectoryUI extends javax.swing.JPanel {
 

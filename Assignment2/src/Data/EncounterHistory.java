@@ -7,7 +7,7 @@ import Model.Encounter;
 import java.util.*;
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 public class EncounterHistory {
     

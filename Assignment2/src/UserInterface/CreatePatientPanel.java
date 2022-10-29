@@ -21,7 +21,7 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 
 public class CreatePatientPanel extends javax.swing.JPanel {

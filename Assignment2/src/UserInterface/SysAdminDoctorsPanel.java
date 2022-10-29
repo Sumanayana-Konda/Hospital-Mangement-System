@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 public class SysAdminDoctorsPanel extends javax.swing.JPanel {
 

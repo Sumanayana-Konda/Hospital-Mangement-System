@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 public class CitiesPanel extends javax.swing.JPanel {
 

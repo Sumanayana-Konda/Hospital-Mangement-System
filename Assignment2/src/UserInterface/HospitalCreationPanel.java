@@ -6,7 +6,7 @@ package UserInterface;
 
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 public class HospitalCreationPanel extends javax.swing.JPanel {
 

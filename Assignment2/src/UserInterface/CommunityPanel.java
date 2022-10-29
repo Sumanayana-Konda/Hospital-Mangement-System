@@ -12,7 +12,7 @@ import javax.swing.DefaultComboBoxModel;
 
 /**
  *
- * @author sujithkaluva
+ * @author sumanayana
  */
 public class CommunityPanel extends javax.swing.JPanel {
 
