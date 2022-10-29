@@ -41,7 +41,7 @@ Doctors d;
         patient = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         encounter = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        View_Encounters = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -53,15 +53,17 @@ Doctors d;
         bloodpressure = new javax.swing.JTextField();
         apt = new com.toedter.calendar.JDateChooser();
         temperature = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        Add_Encounter = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         diagnosis = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         pulserate = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        Update_Encounter = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         doctor = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        View_Selected_Encounter = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        encounterid = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -80,21 +82,21 @@ Doctors d;
 
         encounter.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Temperature", "Blood Pressure", "Weight", "Height", "Pulse Rate", "Appointment time", "Diagnosis", "Doctor"
+                "Temperature", "Blood Pressure", "Weight", "Height", "Pulse Rate", "Appointment time", "Diagnosis", "Doctor", "Encounter ID"
             }
         ));
         jScrollPane2.setViewportView(encounter);
 
-        jButton1.setText("View Encounters");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        View_Encounters.setText("View Encounters");
+        View_Encounters.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                View_EncountersActionPerformed(evt);
             }
         });
 
@@ -110,10 +112,10 @@ Doctors d;
 
         jLabel4.setText("Weight:");
 
-        jButton2.setText("Add Encounter");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Add_Encounter.setText("Add Encounter");
+        Add_Encounter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Add_EncounterActionPerformed(evt);
             }
         });
 
@@ -121,70 +123,76 @@ Doctors d;
 
         jLabel1.setText("Add Encounter");
 
-        jButton3.setText("Update Encounter");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Update_Encounter.setText("Update Encounter");
+        Update_Encounter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                Update_EncounterActionPerformed(evt);
             }
         });
 
         jLabel9.setText("Doctor:");
 
-        jButton4.setText("View Selected Encounter");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        View_Selected_Encounter.setText("View Selected Encounter");
+        View_Selected_Encounter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                View_Selected_EncounterActionPerformed(evt);
             }
         });
+
+        jLabel10.setText("Encounter Id:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(50, 50, 50)
-                            .addComponent(jButton1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(228, 228, 228)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(169, 169, 169)
-                                    .addComponent(jLabel1))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel9))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(temperature)
-                                        .addComponent(bloodpressure)
-                                        .addComponent(weight)
-                                        .addComponent(height)
-                                        .addComponent(pulserate)
-                                        .addComponent(diagnosis)
-                                        .addComponent(apt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(49, 49, 49)
-                                    .addComponent(jButton2)
-                                    .addGap(86, 86, 86)
-                                    .addComponent(jButton3))))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(View_Encounters)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(View_Selected_Encounter))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(228, 228, 228)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(169, 169, 169)
+                                        .addComponent(jLabel1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel8)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel10))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(temperature)
+                                            .addComponent(bloodpressure)
+                                            .addComponent(weight)
+                                            .addComponent(height)
+                                            .addComponent(pulserate)
+                                            .addComponent(diagnosis)
+                                            .addComponent(apt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(doctor, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                                            .addComponent(encounterid))))
+                                .addGap(32, 32, 32))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(Add_Encounter)
+                        .addGap(255, 255, 255)
+                        .addComponent(Update_Encounter)))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -196,8 +204,8 @@ Doctors d;
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton4))
+                    .addComponent(View_Encounters)
+                    .addComponent(View_Selected_Encounter))
                 .addGap(28, 28, 28)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
@@ -232,15 +240,19 @@ Doctors d;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(doctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(97, Short.MAX_VALUE))
+                    .addComponent(jLabel10)
+                    .addComponent(encounterid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Add_Encounter)
+                    .addComponent(Update_Encounter))
+                .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void View_EncountersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_EncountersActionPerformed
         // TODO add your handling code here:
         
         int selectedRow = patient.getSelectedRow();
@@ -260,7 +272,7 @@ Doctors d;
                 if(p.getUsername().equals(en.getPatient().getUsername())&&p.getPassword().equals(en.getPatient().getPassword()))
            {
                 
-            Object[] row = new Object[8];
+            Object[] row = new Object[9];
             row[0] = en.getVitalSign().getTemperature();
             row[1] = en.getVitalSign().getBlood_Pressure();
             row[2] = en.getVitalSign().getWeight();
@@ -269,6 +281,7 @@ Doctors d;
             row[5] = en.getAptTime();
             row[6] = en.getDiagnosis();
             row[7] = en.getDoctor().getFullName();
+            row[8] = en.getEncounter_id();
             model.addRow(row);
             }}
             
@@ -277,9 +290,9 @@ Doctors d;
         
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_View_EncountersActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Add_EncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_EncounterActionPerformed
         // TODO add your handling code here:
 
         int selectedRow = patient.getSelectedRow();
@@ -296,7 +309,7 @@ Doctors d;
                     int height1 = Integer.parseInt(height.getText());
                     int pulse = Integer.parseInt(pulserate.getText());
                     Vital_Signs vt = new Vital_Signs(temp, blood, weight1, height1,pulse);
-                    Encounter en  = new Encounter(vt, apt.getDate(), diagnosis.getText(), p, d);
+                    Encounter en  = new Encounter(vt, apt.getDate(), diagnosis.getText(), p, d, encounterid.getText());
                     e.getEncounterhistory().addNewEncounter(en);
                     JOptionPane.showMessageDialog(this, "Encounter Added");
 
@@ -305,9 +318,9 @@ Doctors d;
             }
 
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Add_EncounterActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void Update_EncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_EncounterActionPerformed
         // TODO add your handling code here:
         int selectedRow = encounter.getSelectedRow();
 
@@ -319,25 +332,26 @@ Doctors d;
             
             for(Encounter en : e.getEncounterhistory().getEncounterHistoryArrayList())
              
-            {    
+            {    if(en.getEncounter_id().equals(encounter.getValueAt(selectedRow, 8))){
                     int temp = Integer.parseInt(temperature.getText());
                     int blood = Integer.parseInt(bloodpressure.getText());
                     int weight1 = Integer.parseInt(weight.getText());
                     int height1 = Integer.parseInt(height.getText());
-               
+               int pulse = Integer.parseInt(pulserate.getText());
                en.getVitalSign().setTemperature(temp);
                en.getVitalSign().setBlood_Pressure(blood);
                en.getVitalSign().setHeight(height1);
                en.getVitalSign().setWeight(weight1);
-               en.getVitalSign().setPulse_Rate(PROPERTIES);
+               en.getVitalSign().setPulse_Rate(pulse);
                en.setDiagnosis(diagnosis.getText());
                en.setAptTime(apt.getDate());
-        }
+               JOptionPane.showMessageDialog(this, "Encounter Updated");
+        }}
         
             }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_Update_EncounterActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void View_Selected_EncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Selected_EncounterActionPerformed
         // TODO add your handling code here:
         int selectedRow = encounter.getSelectedRow();
         if (selectedRow < 0) {
@@ -354,21 +368,23 @@ Doctors d;
             diagnosis.setText(encounter.getValueAt(selectedRow, 6).toString());
             doctor.setText(encounter.getValueAt(selectedRow, 7).toString());
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_View_Selected_EncounterActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Add_Encounter;
+    private javax.swing.JButton Update_Encounter;
+    private javax.swing.JButton View_Encounters;
+    private javax.swing.JButton View_Selected_Encounter;
     private com.toedter.calendar.JDateChooser apt;
     private javax.swing.JTextField bloodpressure;
     private javax.swing.JTextField diagnosis;
     private javax.swing.JTextField doctor;
     private javax.swing.JTable encounter;
+    private javax.swing.JTextField encounterid;
     private javax.swing.JTextField height;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

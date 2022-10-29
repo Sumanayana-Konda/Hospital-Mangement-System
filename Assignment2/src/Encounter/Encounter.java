@@ -18,17 +18,27 @@ public class Encounter {
     private String diagnosis;
     private Patients patient;
     private Doctors doctor;
+    private String encounter_id;
 
     public Encounter( Vital_Signs vitalSign,
             Date aptTime,
-            String result, Patients patient, Doctors doctor){
+            String result, Patients patient, Doctors doctor, String encounter_id){
 
         this.vitalSign =vitalSign;
         this.aptTime = aptTime;
         this.diagnosis = result;
         this.doctor = doctor;
         this.patient = patient;
+        this.encounter_id = encounter_id;
 
+    }
+
+    public String getEncounter_id() {
+        return encounter_id;
+    }
+
+    public void setEncounter_id(String encounter_id) {
+        this.encounter_id = encounter_id;
     }
 
     public Patients getPatient() {

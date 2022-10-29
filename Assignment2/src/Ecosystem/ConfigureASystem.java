@@ -46,8 +46,8 @@ public class ConfigureASystem {
         pa1.getPatients().add(pat1);
         Doctors s = new Doctors("Taylor", "Taylor", "Dr Taylor", h, "Female",d, 1,"2222222222" ,"Cardiologist", "MBBS", 15, pa, hn);
         Doctors s1 = new Doctors("Swift", "Swift", "Dr Swift", h1, "Male",d1, 2,"4444444444" ,"Neurologist", "MBBS", 10, pa1, hn1);
-        Encounter en = new Encounter(vt, d1, "Amnesia", pat, s);
-        Encounter en1 = new Encounter(vt, d2, "Heart Attack", pat1, s1);
+        Encounter en = new Encounter(vt, d1, "Amnesia", pat, s, "1");
+        Encounter en1 = new Encounter(vt, d2, "Heart Attack", pat1, s1, "2");
         system.getDoctorhistory().addNewDoctor(s);
         system.getDoctorhistory().addNewDoctor(s1);
         system.getPersonhistory().addPerson(p);
