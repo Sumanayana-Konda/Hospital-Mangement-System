@@ -42,37 +42,37 @@ public class Home extends javax.swing.JFrame {
         passwordTxt = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        signUpBtn = new javax.swing.JButton();
+        SignUp = new javax.swing.JButton();
         loginBtn = new javax.swing.JButton();
         userRole = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        leftPanel.setBackground(new java.awt.Color(102, 204, 255));
+        leftPanel.setBackground(new java.awt.Color(153, 153, 255));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/hospital.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/hospital (1).png"))); // NOI18N
 
         javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
         leftPanel.setLayout(leftPanelLayout);
         leftPanelLayout.setHorizontalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftPanelLayout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(jLabel3)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addGap(112, 112, 112)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         leftPanelLayout.setVerticalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftPanelLayout.createSequentialGroup()
-                .addGap(186, 186, 186)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(166, 166, 166)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        rightPanel.setBackground(new java.awt.Color(204, 204, 204));
+        rightPanel.setBackground(new java.awt.Color(204, 204, 255));
         rightPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        userNameTxt.setBackground(new java.awt.Color(153, 204, 255));
+        userNameTxt.setBackground(new java.awt.Color(153, 153, 255));
         userNameTxt.setToolTipText("Username");
         userNameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +81,7 @@ public class Home extends javax.swing.JFrame {
         });
         rightPanel.add(userNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 252, 32));
 
-        passwordTxt.setBackground(new java.awt.Color(153, 204, 255));
+        passwordTxt.setBackground(new java.awt.Color(153, 153, 255));
         passwordTxt.setToolTipText("Password");
         passwordTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,18 +96,18 @@ public class Home extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/user.png"))); // NOI18N
         rightPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 30, 30));
 
-        signUpBtn.setBackground(new java.awt.Color(0, 102, 204));
-        signUpBtn.setForeground(new java.awt.Color(255, 255, 255));
-        signUpBtn.setText("Sign Up");
-        signUpBtn.addActionListener(new java.awt.event.ActionListener() {
+        SignUp.setBackground(new java.awt.Color(153, 153, 255));
+        SignUp.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        SignUp.setText("Sign Up");
+        SignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signUpBtnActionPerformed(evt);
+                SignUpActionPerformed(evt);
             }
         });
-        rightPanel.add(signUpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
+        rightPanel.add(SignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
 
-        loginBtn.setBackground(new java.awt.Color(0, 102, 204));
-        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
+        loginBtn.setBackground(new java.awt.Color(153, 153, 255));
+        loginBtn.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         loginBtn.setText("Login");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,8 +116,14 @@ public class Home extends javax.swing.JFrame {
         });
         rightPanel.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, -1, -1));
 
-        userRole.setBackground(new java.awt.Color(153, 204, 255));
+        userRole.setBackground(new java.awt.Color(153, 153, 255));
+        userRole.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         userRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patient", "Doctor", "Community Admin", "Hospital Admin", "System Admin" }));
+        userRole.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userRoleActionPerformed(evt);
+            }
+        });
         rightPanel.add(userRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 163, 250, 30));
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
@@ -127,7 +133,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addComponent(leftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE))
+                .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +163,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userNameTxtActionPerformed
 
-    private void signUpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpBtnActionPerformed
+    private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpActionPerformed
                                                                                                                 // TODO add your handling code here:
         if(userRole.getSelectedItem().toString().equals("Patient")){
             CreatePatientPanel createPatientCmp = new CreatePatientPanel();
@@ -168,7 +174,7 @@ public class Home extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(this, "Please Contact Admin for Sign Up!");
         }
-    }//GEN-LAST:event_signUpBtnActionPerformed
+    }//GEN-LAST:event_SignUpActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
@@ -204,6 +210,17 @@ public class Home extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_loginBtnActionPerformed
+
+    private void userRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userRoleActionPerformed
+        // TODO add your handling code here:
+        
+        if ((userRole.getSelectedItem().toString() == "System Admin")||(userRole.getSelectedItem().toString() == "Community Admin")||(userRole.getSelectedItem().toString() == "Hospital Admin")) {
+            SignUp.setEnabled(false);
+        } else {
+            SignUp.setEnabled(true);
+        }
+        
+    }//GEN-LAST:event_userRoleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,6 +258,7 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton SignUp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -249,7 +267,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPasswordField passwordTxt;
     private javax.swing.JPanel rightPanel;
-    private javax.swing.JButton signUpBtn;
     private javax.swing.JTextField userNameTxt;
     private javax.swing.JComboBox<String> userRole;
     // End of variables declaration//GEN-END:variables

@@ -35,6 +35,7 @@ public class CreatePatientPanel extends javax.swing.JPanel {
     public CreatePatientPanel() {
         initComponents();
         DefaultComboBoxModel cityModelList = new DefaultComboBoxModel(ecoSystem.getCityListComboBox().toArray());
+        //city.setSelectedItem(null);
         city.setModel(cityModelList);
         firstName.setName("patientFirstName");        
         lastName.setName("patientLastName");
@@ -99,7 +100,7 @@ public class CreatePatientPanel extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         backToHome = new javax.swing.JButton();
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/user.png"))); // NOI18N
 
@@ -108,103 +109,104 @@ public class CreatePatientPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addGap(29, 29, 29))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(167, 167, 167)
+                .addGap(206, 206, 206)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(296, Short.MAX_VALUE))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
 
+        lastName.setBackground(new java.awt.Color(153, 153, 255));
         lastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lastNameActionPerformed(evt);
             }
         });
 
+        firstName.setBackground(new java.awt.Color(153, 153, 255));
         firstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstNameActionPerformed(evt);
             }
         });
 
+        eMailId.setBackground(new java.awt.Color(153, 153, 255));
         eMailId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eMailIdActionPerformed(evt);
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("First Name :");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Last Name :");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("DOB :");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        dateOfBirth.setBackground(new java.awt.Color(153, 153, 255));
+        dateOfBirth.setForeground(new java.awt.Color(153, 153, 255));
+
         jLabel4.setText("E-mail Id :");
 
+        gender.setBackground(new java.awt.Color(153, 153, 255));
         gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Gender :");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Line 1 :");
 
+        addressLine1.setBackground(new java.awt.Color(153, 153, 255));
         addressLine1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressLine1ActionPerformed(evt);
             }
         });
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Line 2 :");
 
+        addressLine2.setBackground(new java.awt.Color(153, 153, 255));
         addressLine2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressLine2ActionPerformed(evt);
             }
         });
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("City :");
 
+        state.setBackground(new java.awt.Color(153, 153, 255));
         state.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stateActionPerformed(evt);
             }
         });
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("State :");
 
+        zipCode.setBackground(new java.awt.Color(153, 153, 255));
         zipCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zipCodeActionPerformed(evt);
             }
         });
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Zip Code :");
 
+        phone.setBackground(new java.awt.Color(153, 153, 255));
         phone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phoneActionPerformed(evt);
             }
         });
 
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Phone :");
 
         createPatient.setBackground(new java.awt.Color(0, 102, 153));
@@ -216,27 +218,35 @@ public class CreatePatientPanel extends javax.swing.JPanel {
             }
         });
 
-        city.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boston" }));
+        city.setBackground(new java.awt.Color(153, 153, 255));
         city.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cityActionPerformed(evt);
             }
         });
 
-        community.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roxbury", "Jamaica Plain" }));
+        community.setBackground(new java.awt.Color(153, 153, 255));
+        community.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                communityItemStateChanged(evt);
+            }
+        });
+        community.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                communityActionPerformed(evt);
+            }
+        });
 
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Community :");
 
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        passWord.setBackground(new java.awt.Color(153, 153, 255));
+
         jLabel13.setText("Password :");
 
         jLabel14.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Address Information");
 
         jLabel16.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Personal Information");
 
         backToHome.setBackground(new java.awt.Color(153, 153, 153));
@@ -284,9 +294,9 @@ public class CreatePatientPanel extends javax.swing.JPanel {
                         .addGap(60, 60, 60)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
+                                .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(community, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addComponent(jLabel7)
@@ -301,13 +311,13 @@ public class CreatePatientPanel extends javax.swing.JPanel {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel10)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9))
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel12))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(zipCode, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(state, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(state, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(community, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(269, 269, 269)
                         .addComponent(backToHome)
@@ -350,11 +360,7 @@ public class CreatePatientPanel extends javax.swing.JPanel {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11))
-                        .addGap(62, 62, 62)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(55, 55, 55))
+                        .addGap(62, 62, 62))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
@@ -365,12 +371,12 @@ public class CreatePatientPanel extends javax.swing.JPanel {
                             .addComponent(jLabel7))
                         .addGap(15, 15, 15)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(community, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
+                            .addComponent(jLabel8)
+                            .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
+                            .addComponent(jLabel12)
+                            .addComponent(community, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(state, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -380,6 +386,10 @@ public class CreatePatientPanel extends javax.swing.JPanel {
                             .addComponent(jLabel10)
                             .addComponent(zipCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createPatient)
                     .addComponent(backToHome))
@@ -481,11 +491,13 @@ public class CreatePatientPanel extends javax.swing.JPanel {
             house.setAddressLine2(addressLine2.getText());
             house.setState(state.getText());
             house.setZipCode(Integer.valueOf(zipCode.getText()));
-
+            house.setCommunity(community);
+            house.setCity(city);
+            
             Patient patient = new Patient(firstName.getText(), lastName.getText(), dateOfBirth.getDate(), eMailId.getText(), gender.getSelectedItem().toString(), Long.parseLong(phone.getText()), house, passWord.getText());
             System.out.println("Patient Size" + ecoSystem.getPatientDirectory().getPatientList().size());
             System.out.println("Person Size" + ecoSystem.getPersonDirectory().getPersonList().size());
-
+            //ecoSystem.getPatientDirectory().addPatient(patient);
             //back to login page
             Home home = new Home();
             ((JFrame) SwingUtilities.getWindowAncestor(this)).dispose();
@@ -556,7 +568,40 @@ public class CreatePatientPanel extends javax.swing.JPanel {
 
     private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
         // TODO add your handling code here:
+        community.removeAllItems();
+        for(Community c:ecoSystem.getCommunityList()){
+            community.setSelectedItem(null);
+            
+             if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
+             {   
+                 community.addItem(c.getCommunity().toString());
+                 
+             }
+         }
+
+        
     }//GEN-LAST:event_cityActionPerformed
+
+    private void communityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_communityActionPerformed
+
+    private void communityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_communityItemStateChanged
+        // TODO add your handling code here:
+        
+      /*   DefaultComboBoxModel<String> mode1 = new DefaultComboBoxModel<String>();
+         for(Community c:ecoSystem.getCommunityList()){
+         
+             if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
+             {
+             
+                 mode1.addElement(c.getCommunity().toString());
+                 
+             }
+         
+         }
+        community.setModel(mode1);*/
+    }//GEN-LAST:event_communityItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

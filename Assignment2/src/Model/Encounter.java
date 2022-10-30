@@ -10,7 +10,7 @@ import java.util.*;
  * @author sumanayana
  */
 public class Encounter {
-    
+    private String Encounter_ID;
     private Date encounterDate;
     private String diagnosis;
     private Patient patient;
@@ -23,6 +23,14 @@ public class Encounter {
         this.patient = patient;
         this.vitalSign = vitalSign;
         this.doctor = doctor;
+    }
+
+    public String getEncounter_ID() {
+        return Encounter_ID;
+    }
+
+    public void setEncounter_ID(String Encounter_ID) {
+        this.Encounter_ID = Encounter_ID;
     }
 
     public Doctor getDoctor() {

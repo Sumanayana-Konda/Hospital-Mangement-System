@@ -95,14 +95,12 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
         city1 = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
 
-        jTabbedPane1.setBackground(new java.awt.Color(0, 102, 153));
-        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
 
-        doctorsTable.setBackground(new java.awt.Color(255, 255, 255));
-        doctorsTable.setForeground(new java.awt.Color(0, 0, 0));
+        doctorsTable.setBackground(new java.awt.Color(153, 153, 255));
+        doctorsTable.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         doctorsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -128,19 +126,24 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 798, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Doctor Directory", jPanel2);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
 
         jLabel16.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Personal Information");
 
         firstName.addActionListener(new java.awt.event.ActionListener() {
@@ -149,10 +152,8 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("First Name :");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Last Name :");
 
         lastName.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +162,6 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("E-mail Id :");
 
         eMailId.addActionListener(new java.awt.event.ActionListener() {
@@ -170,15 +170,12 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("DOB :");
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Gender :");
 
         gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Phone :");
 
         phone.addActionListener(new java.awt.event.ActionListener() {
@@ -193,10 +190,8 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Zip Code :");
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("State :");
 
         state.addActionListener(new java.awt.event.ActionListener() {
@@ -207,10 +202,8 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
 
         city.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boston" }));
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("City :");
 
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Community :");
 
         community.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roxbury", "Jamaica Plain" }));
@@ -221,10 +214,8 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Line 2 :");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Line 1 :");
 
         addressLine1.addActionListener(new java.awt.event.ActionListener() {
@@ -234,15 +225,13 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
         });
 
         jLabel14.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Address Information");
 
         jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Password :");
 
-        createDoctor.setBackground(new java.awt.Color(0, 102, 153));
-        createDoctor.setForeground(new java.awt.Color(255, 255, 255));
+        createDoctor.setBackground(new java.awt.Color(204, 204, 255));
+        createDoctor.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         createDoctor.setText("Create");
         createDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,7 +245,6 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Specialization :");
 
         degree.addActionListener(new java.awt.event.ActionListener() {
@@ -265,10 +253,8 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Degree :");
 
-        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setText("Experience :");
 
         experience.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +265,6 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
 
         city1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Community Hospital", "Boston Hospital" }));
 
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("Hospital :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -341,7 +326,7 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
                                     .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 52, Short.MAX_VALUE))
+                        .addGap(0, 99, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
@@ -355,7 +340,7 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(14, Short.MAX_VALUE)
+                        .addContainerGap(15, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
                             .addComponent(jLabel14))

@@ -20,6 +20,22 @@ public class House {
     public House() {
     }
 
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public Community getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(Community community) {
+        this.community = community;
+    }
+
     public String getAddressLine1() {
         return addressLine1;
     }

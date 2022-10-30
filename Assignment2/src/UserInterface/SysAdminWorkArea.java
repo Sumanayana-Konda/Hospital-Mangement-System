@@ -43,10 +43,10 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        jPanel2.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
 
-        getPatientsDirectory.setBackground(new java.awt.Color(255, 255, 204));
-        getPatientsDirectory.setForeground(new java.awt.Color(0, 0, 0));
+        getPatientsDirectory.setBackground(new java.awt.Color(204, 204, 255));
+        getPatientsDirectory.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         getPatientsDirectory.setText("Patients");
         getPatientsDirectory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,8 +54,8 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
             }
         });
 
-        logOutAdmin.setBackground(new java.awt.Color(204, 204, 204));
-        logOutAdmin.setForeground(new java.awt.Color(0, 0, 0));
+        logOutAdmin.setBackground(new java.awt.Color(204, 204, 255));
+        logOutAdmin.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         logOutAdmin.setText("Logout");
         logOutAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,8 +63,8 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
             }
         });
 
-        doctorsPanel.setBackground(new java.awt.Color(255, 255, 204));
-        doctorsPanel.setForeground(new java.awt.Color(0, 0, 0));
+        doctorsPanel.setBackground(new java.awt.Color(204, 204, 255));
+        doctorsPanel.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         doctorsPanel.setText("Doctors");
         doctorsPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,8 +72,8 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
             }
         });
 
-        hospitalsPanel.setBackground(new java.awt.Color(255, 255, 204));
-        hospitalsPanel.setForeground(new java.awt.Color(0, 0, 0));
+        hospitalsPanel.setBackground(new java.awt.Color(204, 204, 255));
+        hospitalsPanel.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         hospitalsPanel.setText("Hospitals");
         hospitalsPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,8 +81,8 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
             }
         });
 
-        communityPanel.setBackground(new java.awt.Color(255, 255, 204));
-        communityPanel.setForeground(new java.awt.Color(0, 0, 0));
+        communityPanel.setBackground(new java.awt.Color(204, 204, 255));
+        communityPanel.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         communityPanel.setText("Communities");
         communityPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,8 +90,8 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
             }
         });
 
-        cityPanel.setBackground(new java.awt.Color(255, 255, 204));
-        cityPanel.setForeground(new java.awt.Color(0, 0, 0));
+        cityPanel.setBackground(new java.awt.Color(204, 204, 255));
+        cityPanel.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         cityPanel.setText("Cities");
         cityPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,8 +99,8 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
             }
         });
 
-        encounterPanel.setBackground(new java.awt.Color(255, 255, 204));
-        encounterPanel.setForeground(new java.awt.Color(0, 0, 0));
+        encounterPanel.setBackground(new java.awt.Color(204, 204, 255));
+        encounterPanel.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         encounterPanel.setText("Encounters");
         encounterPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,21 +139,19 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
                 .addComponent(cityPanel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(encounterPanel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
                 .addComponent(logOutAdmin)
                 .addGap(23, 23, 23))
         );
 
         mainPanel.setLeftComponent(jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setText("Hello,");
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 3, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel2.setText("System Admin");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -165,7 +163,7 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addContainerGap(265, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +172,7 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
 
         mainPanel.setRightComponent(jPanel3);
@@ -242,6 +240,8 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
 
     private void encounterPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encounterPanelActionPerformed
         // TODO add your handling code here:
+        EncounterHistoryPanel en = new EncounterHistoryPanel();
+        mainPanel.setRightComponent(en);
     }//GEN-LAST:event_encounterPanelActionPerformed
 
 

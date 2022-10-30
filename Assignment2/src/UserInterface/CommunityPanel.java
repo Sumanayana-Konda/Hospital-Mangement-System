@@ -60,27 +60,29 @@ public class CommunityPanel extends javax.swing.JPanel {
         communityTable = new javax.swing.JTable();
         addCommunityBtn = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 102));
         jLabel1.setText("Community:");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel2.setText("Select City :");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel3.setText("Community Name :");
 
+        cityComboBox.setBackground(new java.awt.Color(153, 153, 255));
         cityComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cityComboBoxActionPerformed(evt);
             }
         });
 
-        communityTable.setBackground(new java.awt.Color(204, 204, 204));
-        communityTable.setForeground(new java.awt.Color(0, 0, 0));
+        communityName.setBackground(new java.awt.Color(153, 153, 255));
+
+        communityTable.setBackground(new java.awt.Color(153, 153, 255));
+        communityTable.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         communityTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -102,8 +104,8 @@ public class CommunityPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(communityTable);
 
-        addCommunityBtn.setBackground(new java.awt.Color(0, 102, 153));
-        addCommunityBtn.setForeground(new java.awt.Color(255, 255, 255));
+        addCommunityBtn.setBackground(new java.awt.Color(153, 153, 255));
+        addCommunityBtn.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         addCommunityBtn.setText("Add Community");
         addCommunityBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +132,7 @@ public class CommunityPanel extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(111, 111, 111)
                         .addComponent(addCommunityBtn)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
         );
