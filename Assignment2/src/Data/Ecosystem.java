@@ -133,15 +133,15 @@ City city1 = new City("Boston");
         
         Date dateVal = new Date();
         
-      /*  Patient pat = new Patient("Harshini", "Konda", dateVal, "harshini@gmail.com", "Female", 9876543211l, house1, "harshini");
-        Patient pat1 = new Patient("Vihas", "Rathna", dateVal, "vihas@gmail.com", "Male", 9111111111l, house2, "vihas");
-        patientDirectory.addPatient(pat1);
-        patientDirectory.addPatient(pat);
-        
-        Doctor s = new Doctor("Cardiologist", "MBBS", 15, hosp1, "Jonathan", "Smith", dateVal, "jonathan@gmail.com", "Male", 4444444444l, house1, "Jonathan");
-        Doctor s1 = new Doctor("Neurologist", "MBBS", 10, hosp2, "Taylor", "Swift", dateVal, "taylor@gmail.com", "Female", 1345678902l, house2, "Taylor");
-        doctorDirectory.getDoctorList().add(s);
-        doctorDirectory.getDoctorList().add(s1);*/
+//       Patient pat = new Patient("Harshini", "Konda", dateVal, "harshini@gmail.com", "Female", 9876543211l, house1, "harshini");
+//        Patient pat1 = new Patient("Vihas", "Rathna", dateVal, "vihas@gmail.com", "Male", 9111111111l, house2, "vihas");
+//        patientDirectory.addPatient(pat1);
+//        patientDirectory.addPatient(pat);
+//        
+//        Doctor s = new Doctor("Cardiologist", "MBBS", 15, hosp1, "Jonathan", "Smith", dateVal, "jonathan@gmail.com", "Male", 4444444444l, house1, "Jonathan");
+//        Doctor s1 = new Doctor("Neurologist", "MBBS", 10, hosp2, "Taylor", "Swift", dateVal, "taylor@gmail.com", "Female", 1345678902l, house2, "Taylor");
+//        doctorDirectory.getDoctorList().add(s);
+//        doctorDirectory.getDoctorList().add(s1);
 
 }
     public HospitalHistory getHospitalhistory() {
@@ -219,6 +219,65 @@ City city1 = new City("Boston");
     public static Ecosystem getInstance() {
         if (system == null) {
             system = new Ecosystem();
+            City city1 = new City("Boston");
+            City city2 = new City("New York");
+
+            Community community1 = new Community();
+            community1.setCity(city1);
+            community1.setCommunity("Roxbury");
+            Community community2 = new Community();
+            community2.setCity(city1);
+            community2.setCommunity("Jamaica Plain");
+
+            Hospital hosp1 = new Hospital();
+            hosp1.setHospitalName("Roxbury Public Hospital");
+            hosp1.setPhoneNumber(9876543210l);
+            hosp1.setCity(city1);
+            hosp1.setCommunity(community1);
+            hosp1.setAddress("Day Street, 1");
+
+            Hospital hosp2 = new Hospital();
+            hosp2.setHospitalName("Northeastern Hospital");
+            hosp2.setPhoneNumber(9876543211l);
+            hosp2.setCity(city1);
+            hosp2.setCommunity(community1);
+            hosp2.setAddress("John Street, 1");
+
+            House house1 = new House();
+            house1.setAddressLine1("75 saint alphonsus");
+            house1.setAddressLine2("307");
+            house1.setState("MA");
+            house1.setCity(city1);
+            house1.setZipCode(02120);
+            house1.setCommunity(community1);
+
+            House house2 = new House();
+            house2.setAddressLine1("95 saint peters");
+            house2.setAddressLine2("300");
+            house2.setState("MA");
+            house2.setCity(city1);
+            house2.setZipCode(02120);
+            house2.setCommunity(community2);
+
+            Date dateVal = new Date();
+
+//            Person p = new Person("Taylor", "Swift", dateVal, "taylor@gmail.com", "Female", 1345678902l, house1, "Taylor");
+//            Person p1 = new Person("Jonathan", "Smith", dateVal, "jonathan@gmail.com", "Male", 4444444444l, house1, "Jonathan");
+//            Person p2 = new Person("Harshini", "Konda", dateVal, "harshini@gmail.com", "Female", 0000000000l, house2, "Harshini");
+//            Person p3 = new Person("Vihas", "Rathna", dateVal, "vihas@gmail.com", "Male", 1111111111l, house2, "Vihas");
+//            business.personDirectory.addPerson(p);
+//            business.personDirectory.addPerson(p1);
+//            business.personDirectory.addPerson(p2);
+//            business.personDirectory.addPerson(p3);
+
+            Patient pat = new Patient("Harshini", "Konda", dateVal, "harshini@gmail.com", "Female", 9876543211l, house1, "harshini");
+            Patient pat1 = new Patient("Vihas", "Rathna", dateVal, "vihas@gmail.com", "Male", 9111111111l, house2, "vihas");
+
+
+            Doctor s = new Doctor("Cardiologist", "MBBS", 15, hosp1, "Jonathan", "Smith", dateVal, "jonathan@gmail.com", "Male", 4444444444l, house1, "Jonathan");
+            Doctor s1 = new Doctor("Neurologist", "MBBS", 10, hosp2, "Taylor", "Swift", dateVal, "taylor@gmail.com", "Female", 1345678902l, house2, "Taylor");
+            system.doctorDirectory.getDoctorList().add(s);
+            system.doctorDirectory.getDoctorList().add(s1);
         }
         return system;
     }

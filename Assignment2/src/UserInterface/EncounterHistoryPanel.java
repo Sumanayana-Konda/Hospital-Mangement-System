@@ -70,7 +70,6 @@ public class EncounterHistoryPanel extends javax.swing.JPanel {
 
         encounterHistoryTable.setBackground(new java.awt.Color(204, 204, 255));
         encounterHistoryTable.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        encounterHistoryTable.setForeground(new java.awt.Color(0, 51, 102));
         encounterHistoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null},
@@ -90,6 +89,8 @@ public class EncounterHistoryPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        encounterHistoryTable.setGridColor(new java.awt.Color(204, 204, 255));
+        encounterHistoryTable.setSelectionBackground(new java.awt.Color(204, 204, 255));
         jScrollPane1.setViewportView(encounterHistoryTable);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N

@@ -224,6 +224,8 @@ public class SysAdminWorkArea extends javax.swing.JPanel {
 
     private void hospitalsPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalsPanelActionPerformed
         // TODO add your handling code here:
+        HospitalCreationPanel ho = new HospitalCreationPanel();
+        mainPanel.setRightComponent(ho);
     }//GEN-LAST:event_hospitalsPanelActionPerformed
 
     private void communityPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityPanelActionPerformed

@@ -12,6 +12,7 @@ import Model.Hospital;
 import Model.Patient;
 import Model.VitalSigns;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -56,6 +57,12 @@ Patient patient;
         jLabel1.setText("Book Appointment");
 
         jLabel2.setText("Select Hospital:");
+
+        hospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hospitalActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Select Doctor:");
 
@@ -128,14 +135,7 @@ Patient patient;
 
     private void doctorItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_doctorItemStateChanged
         // TODO add your handling code here:
-        DefaultComboBoxModel<String> mode1 = new DefaultComboBoxModel<String>();
-        for (Doctor d:ecoSystem.getDoctorDirectory().getDoctorList()){
-        if (hospital.getSelectedItem().toString().equals(d.getHospital().getHospitalName()))
-        {
-        mode1.addElement(d.getFirstName());
-        }
-            }
-        doctor.setModel(mode1);
+        
     }//GEN-LAST:event_doctorItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -145,9 +145,23 @@ Patient patient;
         VitalSigns vt = new VitalSigns(0, 0, 0, 0, 0, 0, 0);
         Encounter encounter = new Encounter(date.getDate(), "", patient, vt, doctor1); 
         ecoSystem.getEncounterHistory().addEncounter(encounter);
+        JOptionPane.showMessageDialog(this, "Appointment Booked");
         }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void hospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalActionPerformed
+        // TODO add your handling code here:
+        
+        DefaultComboBoxModel<String> mode1 = new DefaultComboBoxModel<String>();
+        for (Doctor d:ecoSystem.getDoctorDirectory().getDoctorList()){
+        if (hospital.getSelectedItem().toString().equals(d.getHospital().getHospitalName()))
+        {
+        mode1.addElement(d.getFirstName());
+        }
+            }
+        doctor.setModel(mode1);
+    }//GEN-LAST:event_hospitalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -209,8 +209,8 @@ public class CreatePatientPanel extends javax.swing.JPanel {
 
         jLabel11.setText("Phone :");
 
-        createPatient.setBackground(new java.awt.Color(0, 102, 153));
-        createPatient.setForeground(new java.awt.Color(255, 255, 255));
+        createPatient.setBackground(new java.awt.Color(153, 153, 255));
+        createPatient.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         createPatient.setText("Create");
         createPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,8 +249,8 @@ public class CreatePatientPanel extends javax.swing.JPanel {
         jLabel16.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
         jLabel16.setText("Personal Information");
 
-        backToHome.setBackground(new java.awt.Color(153, 153, 153));
-        backToHome.setForeground(new java.awt.Color(255, 255, 255));
+        backToHome.setBackground(new java.awt.Color(153, 153, 255));
+        backToHome.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         backToHome.setText("Cancel");
         backToHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -352,7 +352,7 @@ public class CreatePatientPanel extends javax.swing.JPanel {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 14, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 15, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
