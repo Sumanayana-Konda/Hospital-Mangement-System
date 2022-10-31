@@ -93,12 +93,13 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
         city1 = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 204, 255));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
-        doctorsTable.setBackground(new java.awt.Color(204, 204, 255));
+        doctorsTable.setBackground(new java.awt.Color(153, 153, 255));
         doctorsTable.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         doctorsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -410,6 +411,21 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Create Doctor", jPanel1);
 
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 941, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 765, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("View/Update/Delete", jPanel3);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -557,6 +573,7 @@ public class SysAdminDoctorsPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField lastName;

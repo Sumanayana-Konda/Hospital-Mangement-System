@@ -153,7 +153,6 @@ public class CreatePatientPanel extends javax.swing.JPanel {
         jLabel3.setText("DOB :");
 
         dateOfBirth.setBackground(new java.awt.Color(153, 153, 255));
-        dateOfBirth.setForeground(new java.awt.Color(153, 153, 255));
 
         jLabel4.setText("E-mail Id :");
 
@@ -503,9 +502,7 @@ public class CreatePatientPanel extends javax.swing.JPanel {
             ((JFrame) SwingUtilities.getWindowAncestor(this)).dispose();
             home.setVisible(true);
         }
-        else{
-            //JOptionPane.showMessageDialog(this, "All Fields are Mandatory!");
-        }
+        
     }//GEN-LAST:event_createPatientActionPerformed
 
     public boolean validateData(JComponent input) {

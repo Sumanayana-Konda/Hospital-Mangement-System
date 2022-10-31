@@ -197,6 +197,18 @@ public class Home extends javax.swing.JFrame {
                 this.validate();
             }
         }
+        else if(userRole.getSelectedItem().toString().equals("Doctor")){
+            pManager = ecoSys.getDoctorDirectory().getPasswordManager();
+            if(!(pManager.containsKey(userNameTxt.getText()) && pManager.get(userNameTxt.getText()).equals(passwordTxt.getText()))){
+                JOptionPane.showMessageDialog(this, "Login Failed, please enter valid credentials.");
+            }
+            else{
+                DoctorWorkArea patWrkArea = new DoctorWorkArea(ecoSys.getDoctorDirectory().getDoctorMap().get(userNameTxt.getText()));
+                this.setContentPane(patWrkArea);
+                this.invalidate();
+                this.validate();
+            }
+        }
         else if(userRole.getSelectedItem().toString().equals("System Admin")){
             pManager = ecoSys.getSystemAdminDirectory().getPasswordManager();
             if(!(pManager.containsKey(userNameTxt.getText()) && pManager.get(userNameTxt.getText()).equals(passwordTxt.getText()))){
@@ -204,6 +216,30 @@ public class Home extends javax.swing.JFrame {
             }
             else{
                 SysAdminWorkArea sysAdmWrkArea = new SysAdminWorkArea();
+                this.setContentPane(sysAdmWrkArea);
+                this.invalidate();
+                this.validate();
+            }
+        }
+        else if(userRole.getSelectedItem().toString().equals("Community Admin")){
+            pManager = ecoSys.getCommunityadmindirectory().getPasswordManager();
+            if(!(pManager.containsKey(passwordTxt.getText()) && pManager.get(passwordTxt.getText()).equals(userNameTxt.getText()))){
+                JOptionPane.showMessageDialog(this, "Login Failed, please enter valid credentials.");
+            }
+            else{
+                CommunityAdminWorkArea sysAdmWrkArea = new CommunityAdminWorkArea(userNameTxt.getText());
+                this.setContentPane(sysAdmWrkArea);
+                this.invalidate();
+                this.validate();
+            }
+        }
+        else if(userRole.getSelectedItem().toString().equals("Hospital Admin")){
+            pManager = ecoSys.getHospitaladmindirectory().getPasswordManager();
+            if(!(pManager.containsKey(passwordTxt.getText()) && pManager.get(passwordTxt.getText()).equals(userNameTxt.getText()))){
+                JOptionPane.showMessageDialog(this, "Login Failed, please enter valid credentials.");
+            }
+            else{
+                HospitalAdminWorkArea sysAdmWrkArea = new HospitalAdminWorkArea(userNameTxt.getText());
                 this.setContentPane(sysAdmWrkArea);
                 this.invalidate();
                 this.validate();

@@ -68,7 +68,7 @@ public class EncounterHistoryPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        encounterHistoryTable.setBackground(new java.awt.Color(204, 204, 255));
+        encounterHistoryTable.setBackground(new java.awt.Color(153, 153, 255));
         encounterHistoryTable.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         encounterHistoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

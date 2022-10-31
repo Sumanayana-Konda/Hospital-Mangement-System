@@ -8,8 +8,14 @@ import Data.Ecosystem;
 import Model.Hospital;
 import Model.City;
 import Model.Community;
+import Model.House;
+import Model.Patient;
+import Model.Person;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -23,12 +29,19 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
      */
     
     Ecosystem ecoSystem = Ecosystem.getInstance();
+    Hospital hObjUpdate;
     
     public HospitalCreationPanel() {
         initComponents();
         populateHospitals();
+        TableFilling();
         DefaultComboBoxModel cityModelList = new DefaultComboBoxModel(ecoSystem.getCityListComboBox().toArray());
         cityBox.setModel(cityModelList);
+        cityBoxUpdate.setModel(cityModelList);
+        DefaultComboBoxModel cityModel = new DefaultComboBoxModel(ecoSystem.getCityListComboBox().toArray());
+        city.setModel(cityModel);
+        DefaultComboBoxModel cityMode = new DefaultComboBoxModel(ecoSystem.getCityListComboBox().toArray());
+        city1.setModel(cityMode);
 //        DefaultComboBoxModel communityModelList = new DefaultComboBoxModel(ecoSystem.getCommunityListComboBox().toArray());
 //        communityBox.setModel(communityModelList);
     }
@@ -56,6 +69,8 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel6 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -71,41 +86,150 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
         createHospital = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         hospitalTable = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        hospSearchTxt = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        searchHospital = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        hospitalNameUpdate = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        phoneNumberUpdate = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        addressUpdate = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        cityBoxUpdate = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        communityBoxUpdate = new javax.swing.JComboBox<>();
+        updateHospital = new javax.swing.JButton();
+        deleteHospital = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        personid = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        fname = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        gender = new javax.swing.JComboBox<>();
+        lname = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        dob = new com.toedter.calendar.JDateChooser();
+        email = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        pnum = new javax.swing.JTextField();
+        add1 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        add2 = new javax.swing.JTextField();
+        state = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        community = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        city = new javax.swing.JComboBox<>();
+        jLabel24 = new javax.swing.JLabel();
+        zipcode = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        password = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        communityadmin = new javax.swing.JTable();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        lname1 = new javax.swing.JTextField();
+        add3 = new javax.swing.JTextField();
+        fname1 = new javax.swing.JTextField();
+        pnum1 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        zipcode1 = new javax.swing.JTextField();
+        gender1 = new javax.swing.JTextField();
+        state1 = new javax.swing.JTextField();
+        email1 = new javax.swing.JTextField();
+        add4 = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        search = new javax.swing.JTextField();
+        update = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
+        view = new javax.swing.JButton();
+        dob1 = new com.toedter.calendar.JDateChooser();
+        community1 = new javax.swing.JComboBox<>();
+        city1 = new javax.swing.JComboBox<>();
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.setBackground(new java.awt.Color(153, 153, 255));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel1.setText("Hospital");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setText("Hospital Directory");
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel2.setText("Hospital Name :");
 
         hospitalName.setBackground(new java.awt.Color(153, 153, 255));
+        hospitalName.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel3.setText("City :");
 
         cityBox.setBackground(new java.awt.Color(153, 153, 255));
+        cityBox.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         cityBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cityBoxItemStateChanged(evt);
             }
         });
+        cityBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cityBoxActionPerformed(evt);
+            }
+        });
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel4.setText("Address :");
 
         address.setBackground(new java.awt.Color(153, 153, 255));
+        address.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
 
         phoneNumber.setBackground(new java.awt.Color(153, 153, 255));
+        phoneNumber.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         phoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phoneNumberActionPerformed(evt);
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel5.setText("Phone :");
 
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel6.setText("Community :");
 
         communityBox.setBackground(new java.awt.Color(153, 153, 255));
+        communityBox.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
 
         createHospital.setBackground(new java.awt.Color(153, 153, 255));
         createHospital.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -143,30 +267,29 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel2)
+                        .addComponent(hospitalName)
+                        .addComponent(jLabel5)
+                        .addComponent(phoneNumber)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel6)
+                        .addComponent(address)
+                        .addComponent(cityBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(communityBox, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2)
-                            .addComponent(hospitalName)
-                            .addComponent(jLabel5)
-                            .addComponent(phoneNumber)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel6)
-                            .addComponent(address)
-                            .addComponent(cityBox, 0, 148, Short.MAX_VALUE)
-                            .addComponent(communityBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
+                        .addGap(37, 37, 37)
                         .addComponent(createHospital)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(312, 312, 312))
+                .addGap(240, 240, 240))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +298,9 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(hospitalName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,20 +321,701 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(communityBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addComponent(createHospital))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(116, Short.MAX_VALUE))
+                        .addComponent(createHospital)))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
+
+        jTabbedPane1.addTab("Create/Directory", jPanel1);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+
+        hospSearchTxt.setBackground(new java.awt.Color(153, 153, 255));
+        hospSearchTxt.setForeground(new java.awt.Color(255, 255, 255));
+        hospSearchTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hospSearchTxtActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel7.setText("Hospital Name :");
+
+        searchHospital.setBackground(new java.awt.Color(153, 153, 255));
+        searchHospital.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        searchHospital.setText("Search");
+        searchHospital.setBorder(null);
+        searchHospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchHospitalActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel8.setText("Hospital Name :");
+
+        hospitalNameUpdate.setBackground(new java.awt.Color(153, 153, 255));
+        hospitalNameUpdate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel9.setText("Phone :");
+
+        phoneNumberUpdate.setBackground(new java.awt.Color(153, 153, 255));
+        phoneNumberUpdate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        phoneNumberUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phoneNumberUpdateActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel10.setText("Address :");
+
+        addressUpdate.setBackground(new java.awt.Color(153, 153, 255));
+        addressUpdate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel11.setText("City :");
+
+        cityBoxUpdate.setBackground(new java.awt.Color(153, 153, 255));
+        cityBoxUpdate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        cityBoxUpdate.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cityBoxUpdateItemStateChanged(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel12.setText("Community :");
+
+        communityBoxUpdate.setBackground(new java.awt.Color(153, 153, 255));
+        communityBoxUpdate.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+
+        updateHospital.setBackground(new java.awt.Color(153, 153, 255));
+        updateHospital.setText("Update");
+        updateHospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateHospitalActionPerformed(evt);
+            }
+        });
+
+        deleteHospital.setBackground(new java.awt.Color(153, 153, 255));
+        deleteHospital.setText("Delete");
+        deleteHospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteHospitalActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(hospitalNameUpdate)
+                    .addComponent(phoneNumberUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(addressUpdate)
+                    .addComponent(cityBoxUpdate, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(communityBoxUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(125, 125, 125))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(334, 334, 334)
+                        .addComponent(updateHospital)
+                        .addGap(47, 47, 47)
+                        .addComponent(deleteHospital))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(213, 213, 213)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(hospSearchTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(searchHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(402, 402, 402))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(hospSearchTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(searchHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(addressUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cityBoxUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hospitalNameUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(phoneNumberUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(communityBoxUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateHospital)
+                    .addComponent(deleteHospital))
+                .addGap(70, 70, 70))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Search", jPanel2);
+
+        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
+
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel17.setText("Hospital Admin Creation");
+
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel13.setText("Person ID:");
+
+        personid.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel14.setText("First Name:");
+
+        fname.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel15.setText("Gender:");
+
+        gender.setBackground(new java.awt.Color(153, 153, 255));
+        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+
+        lname.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel16.setText("Last Name:");
+
+        email.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel18.setText("Email:");
+
+        jLabel19.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel19.setText("Phone Number:");
+
+        pnum.setBackground(new java.awt.Color(153, 153, 255));
+
+        add1.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel20.setText("Address:");
+
+        add2.setBackground(new java.awt.Color(153, 153, 255));
+
+        state.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel21.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel21.setText("State:");
+
+        jLabel22.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel22.setText("Community:");
+
+        community.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel23.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel23.setText("City:");
+
+        city.setBackground(new java.awt.Color(153, 153, 255));
+        city.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cityActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel24.setText("Zipcode:");
+
+        zipcode.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel25.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel25.setText("Password:");
+
+        jLabel26.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel26.setText("Date Of Birth:");
+
+        jButton1.setBackground(new java.awt.Color(153, 153, 255));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jButton1.setText("Create");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(344, 344, 344)
+                        .addComponent(jLabel17))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(personid, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                            .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel15))
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                            .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(34, 34, 34)
+                                            .addComponent(jLabel16)))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton1)
+                                            .addComponent(jLabel19))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lname, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                    .addComponent(gender, 0, 315, Short.MAX_VALUE)
+                                    .addComponent(pnum))))))
+                .addContainerGap(107, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(47, 47, 47)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel22)
+                                .addComponent(jLabel21)
+                                .addComponent(jLabel20))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(add2)
+                                .addComponent(add1)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                    .addComponent(state, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                    .addComponent(jLabel23)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(community, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel24)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(zipcode))))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(249, 249, 249)
+                            .addComponent(jLabel25)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(112, Short.MAX_VALUE)))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(personid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14)
+                            .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26)))
+                    .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel19)
+                        .addComponent(pnum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(117, 117, 117))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(191, 191, 191)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel20)
+                        .addComponent(add1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(add2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel21)
+                        .addComponent(state, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel23)
+                        .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel22)
+                        .addComponent(community, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel24)
+                        .addComponent(zipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(43, 43, 43)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel25)
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(232, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Create", jPanel4);
+
+        jPanel5.setBackground(new java.awt.Color(204, 204, 255));
+
+        communityadmin.setBackground(new java.awt.Color(153, 153, 255));
+        communityadmin.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Date of Birth", "Email", "Gender", "Phone Number", "Address", "Address ", "State", "City", "Community", "Zipcode", "Password"
+            }
+        ));
+        jScrollPane2.setViewportView(communityadmin);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 871, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(138, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("View", jPanel5);
+
+        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
+
+        jPanel8.setBackground(new java.awt.Color(204, 204, 255));
+
+        lname1.setBackground(new java.awt.Color(153, 153, 255));
+
+        add3.setBackground(new java.awt.Color(153, 153, 255));
+
+        fname1.setBackground(new java.awt.Color(153, 153, 255));
+
+        pnum1.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel27.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel27.setText("Gender:");
+
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel28.setText("City:");
+
+        jLabel29.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel29.setText("Community:");
+
+        jLabel30.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel30.setText("Email:");
+
+        jLabel31.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel31.setText("Date of Birth:");
+
+        jLabel32.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel32.setText("Zipcode:");
+
+        jLabel33.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel33.setText("Last Name:");
+
+        jLabel34.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel34.setText("State:");
+
+        jLabel35.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel35.setText("First Name:");
+
+        jLabel36.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel36.setText("Address:");
+
+        jLabel37.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel37.setText("Hospital Admin Details");
+
+        jLabel38.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel38.setText("Phone Number:");
+
+        zipcode1.setBackground(new java.awt.Color(153, 153, 255));
+
+        gender1.setBackground(new java.awt.Color(153, 153, 255));
+
+        state1.setBackground(new java.awt.Color(153, 153, 255));
+
+        email1.setEditable(false);
+        email1.setBackground(new java.awt.Color(153, 153, 255));
+
+        add4.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel39.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel39.setText("Email to be Searched:");
+
+        search.setBackground(new java.awt.Color(153, 153, 255));
+
+        update.setBackground(new java.awt.Color(153, 153, 255));
+        update.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        update.setText("Update");
+        update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateActionPerformed(evt);
+            }
+        });
+
+        delete.setBackground(new java.awt.Color(153, 153, 255));
+        delete.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        delete.setText("Delete");
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
+
+        view.setBackground(new java.awt.Color(153, 153, 255));
+        view.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        view.setText("View");
+        view.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewActionPerformed(evt);
+            }
+        });
+
+        dob1.setBackground(new java.awt.Color(153, 153, 255));
+
+        community1.setBackground(new java.awt.Color(153, 153, 255));
+        community1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        community1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                community1ActionPerformed(evt);
+            }
+        });
+
+        city1.setBackground(new java.awt.Color(153, 153, 255));
+        city1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        city1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                city1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel34)
+                            .addComponent(jLabel29))
+                        .addGap(46, 46, 46))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(state1)
+                                    .addComponent(community1, 0, 196, Short.MAX_VALUE))
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addGap(24, 24, 24)
+                                        .addComponent(jLabel32))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel28)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addComponent(update)
+                                .addGap(55, 55, 55)))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(zipcode1)
+                            .addComponent(delete)
+                            .addComponent(city1, 0, 283, Short.MAX_VALUE)))
+                    .addComponent(add4)
+                    .addComponent(add3)
+                    .addComponent(pnum1)
+                    .addComponent(gender1)
+                    .addComponent(email1)
+                    .addComponent(lname1)
+                    .addComponent(fname1)
+                    .addComponent(search)
+                    .addComponent(dob1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 107, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel37)
+                        .addGap(370, 370, 370))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addComponent(view)
+                        .addGap(389, 389, 389))))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel37)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(view)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel35)
+                                    .addComponent(fname1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel33))
+                            .addComponent(lname1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel31))
+                    .addComponent(dob1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(gender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(pnum1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel36))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(add3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(add4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(state1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28)
+                    .addComponent(city1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(zipcode1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel29)
+                    .addComponent(community1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(update)
+                    .addComponent(delete))
+                .addGap(23, 23, 23))
+        );
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(94, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Update/Delete", jPanel7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -234,6 +1040,12 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
         ecoSystem.getHospitalhistory().getHospitalList().add(hospObj);
         
         populateHospitals();
+        
+        hospitalName.setText("");
+        phoneNumber.setText("");
+        address.setText("");
+        cityBox.setSelectedItem("");
+        communityBox.setSelectedItem("");
     }//GEN-LAST:event_createHospitalActionPerformed
 
     private void cityBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityBoxItemStateChanged
@@ -249,23 +1061,403 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
         DefaultComboBoxModel communityModelList = new DefaultComboBoxModel(communityBoxList.toArray());
         communityBox.setModel(communityModelList);
     }//GEN-LAST:event_cityBoxItemStateChanged
+private void TableFilling() {
+        HashMap<String,String> pManager;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
+        DefaultTableModel model = (DefaultTableModel) communityadmin.getModel();
+        model.setRowCount(0);
+    pManager = ecoSystem.getHospitaladmindirectory().getPasswordManager();
+        for (Person person : ecoSystem.getPersonDirectory().getPersonList()){
+        if(pManager.containsKey(person.getPassword()) && pManager.get(person.getPassword()).equals(person.getEmailId())){
+                
+        Object[] row = new Object[12];
+        
+        row[0] = person.getFirstName()+""+person.getLastName();
+        row[1] = person.getDateOfBirth();
+        row[2] = person.getEmailId();
+        row[3] = person.getGender();
+        row[4] = person.getPhoneNumber();
+        row[5] = person.getHouse().getAddressLine1();
+        row[6] = person.getHouse().getAddressLine2();
+        row[7] = person.getHouse().getState();
+        row[8] = person.getHouse().getCity().getCity();
+        row[9] = person.getHouse().getCommunity().getCommunity();
+        row[10] = person.getHouse().getZipCode();
+        row[11] = person.getPassword();
+        
+        model.addRow(row);
+        
+        }       
+            
+            
+    }
+    }
+    private void hospSearchTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospSearchTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hospSearchTxtActionPerformed
+
+    private void searchHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchHospitalActionPerformed
+        // TODO add your handling code here:
+        String searchTxt = hospSearchTxt.getText();
+        boolean found = false;
+        for(Hospital hObj:ecoSystem.getHospitalhistory().getHospitalList()){
+            if(hObj.getHospitalName().contains(searchTxt)){
+                hospitalNameUpdate.setText(hObj.getHospitalName());
+                phoneNumberUpdate.setText(String.valueOf(hObj.getPhoneNumber()));
+                addressUpdate.setText(hObj.getAddress());
+                cityBoxUpdate.setSelectedItem(hObj.getCity().getCity());
+                communityBoxUpdate.setSelectedItem(hObj.getCommunity().getCommunity());
+                hObjUpdate = hObj;
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            JOptionPane.showMessageDialog(this, "Hospital Not Found!");
+        }
+    }//GEN-LAST:event_searchHospitalActionPerformed
+
+    private void phoneNumberUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumberUpdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneNumberUpdateActionPerformed
+
+    private void cityBoxUpdateItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityBoxUpdateItemStateChanged
+        // TODO add your handling code here:
+        String cityName = cityBoxUpdate.getSelectedItem().toString();
+        ArrayList<String> communityBoxList = new ArrayList<String>();
+        for(Community c:ecoSystem.getCommunityList()){
+            if(c.getCity().getCity().equals(cityName)){
+                communityBoxList.add(c.getCommunity());
+            }
+        }
+        DefaultComboBoxModel communityModelList = new DefaultComboBoxModel(communityBoxList.toArray());
+        communityBoxUpdate.setModel(communityModelList);
+    }//GEN-LAST:event_cityBoxUpdateItemStateChanged
+
+    private void updateHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateHospitalActionPerformed
+        // TODO add your handling code here:
+        if(hObjUpdate != null) {
+            hObjUpdate.setHospitalName(hospitalNameUpdate.getText());
+            hObjUpdate.setPhoneNumber(Long.valueOf(phoneNumberUpdate.getText()));
+            hObjUpdate.setAddress(addressUpdate.getText());
+            
+            String selectedCity = cityBoxUpdate.getSelectedItem().toString();
+            String selectedCommunity = communityBoxUpdate.getSelectedItem().toString();
+            for(Community cObj : ecoSystem.getCommunityList()) {
+                if (cObj.getCity().getCity().equals(selectedCity) && cObj.getCommunity().equals(selectedCommunity)) {
+                    hObjUpdate.setCity(cObj.getCity());
+                    hObjUpdate.setCommunity(cObj);
+                    break;
+                }
+            }
+            
+            cityBoxUpdateItemStateChanged(null);
+            populateHospitals();
+
+            JOptionPane.showMessageDialog(this, "Hospital updated successfully!");
+            hObjUpdate = null;
+            hospSearchTxt.setText("");
+            hospitalNameUpdate.setText("");
+            phoneNumberUpdate.setText("");
+            addressUpdate.setText("");
+            cityBoxUpdate.setSelectedItem("");
+            communityBoxUpdate.setSelectedItem("");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Hospital Not Found");
+        }
+    }//GEN-LAST:event_updateHospitalActionPerformed
+
+    private void cityBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cityBoxActionPerformed
+
+    private void deleteHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteHospitalActionPerformed
+        // TODO add your handling code here:
+        if(hObjUpdate!=null){
+            ecoSystem.getHospitalhistory().getHospitalList().remove(hObjUpdate);
+            populateHospitals();
+
+            JOptionPane.showMessageDialog(this, "Hospital Deleted Successfully!");
+            
+            hObjUpdate = null;
+            hospSearchTxt.setText("");
+            hospitalNameUpdate.setText("");
+            phoneNumberUpdate.setText("");
+            addressUpdate.setText("");
+            cityBoxUpdate.setSelectedItem("");
+            communityBoxUpdate.setSelectedItem("");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Hospital Not Found");
+        }
+    }//GEN-LAST:event_deleteHospitalActionPerformed
+
+    private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
+        // TODO add your handling code here:
+
+        community.removeAllItems();
+        for(Community c:ecoSystem.getCommunityList()){
+            community.setSelectedItem(null);
+
+            if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
+            {
+                community.addItem(c.getCommunity().toString());
+
+            }
+        }
+
+    }//GEN-LAST:event_cityActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        City city1 = new City(city.getSelectedItem().toString());
+        Community com = new Community();
+        com.setCommunity(community.getSelectedItem().toString());
+        com.setCity(city1);
+        House h = new House();
+        h.setAddressLine1(add1.getText());
+        h.setAddressLine2(add2.getText());
+        h.setState(state.getText());
+        h.setZipCode(Integer.parseInt(zipcode.getText()));
+        h.setCity(city1);
+        h.setCommunity(com);
+        Person person = new Person(fname.getText(), lname.getText(), dob.getDate(), email.getText(), gender.getSelectedItem().toString(),
+        Long.parseLong(pnum.getText()), h, password.getText());
+        ecoSystem.getHospitaladmindirectory().getPasswordManager().put(password.getText(), email.getText());
+        JOptionPane.showMessageDialog(this, "Hospital Admin Added");
+        TableFilling();
+        fname.setText("");
+                lname.setText("");
+                dob.setDate(null);
+                gender.setSelectedItem(null);
+                email.setText("");
+                pnum.setText("");
+                add1.setText("");
+                add2.setText("");
+                state.setText("");
+                city.setSelectedItem(null);
+                community.setSelectedItem(null);
+                zipcode.setText("");
+                password.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+        // TODO add your handling code here:
+        String emailsearch = search.getText();
+        for(Person patient : ecoSystem.getPersonDirectory().getPersonList())
+        {
+            if (patient.getEmailId().equals(emailsearch))
+            {
+
+                patient.setFirstName(fname1.getText());
+                patient.setLastName(lname1.getText());
+                patient.setDateOfBirth(dob1.getDate());
+                patient.setGender(gender1.getText());
+                patient.getHouse().setAddressLine1(add3.getText());
+                patient.getHouse().setAddressLine2(add4.getText());
+                patient.getHouse().getCity().setCity(city1.getSelectedItem().toString());
+                patient.getHouse().getCommunity().setCommunity(community1.getSelectedItem().toString());
+                patient.getHouse().setState(state1.getText());
+                patient.getHouse().setZipCode(Integer.valueOf(zipcode1.getText()));
+                patient.setPhoneNumber(Long.parseLong(pnum1.getText()));
+                JOptionPane.showMessageDialog(this, "Admin Details Updated");
+                fname1.setText("");
+                lname1.setText("");
+                dob1.setDate(null);
+                gender1.setText("");
+                email1.setText("");
+                pnum1.setText("");
+                add3.setText("");
+                add4.setText("");
+                state1.setText("");
+                city1.setSelectedItem(null);
+                community1.setSelectedItem(null);
+                zipcode1.setText("");
+                search.setText("");
+               TableFilling();
+                break;
+            }}
+         JOptionPane.showMessageDialog(this, "Admin Not Found");
+    }//GEN-LAST:event_updateActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        // TODO add your handling code here:
+        String emailsearch = search.getText();
+        for(Person patient : ecoSystem.getPersonDirectory().getPersonList())
+        {
+            if (patient.getEmailId().equals(emailsearch))
+            {
+     ecoSystem.getCommunityadmindirectory().getPasswordManager().remove(patient.getPassword());
+                ecoSystem.getPersonDirectory().getPersonList().remove(patient);
+              //  ecoSystem.getCommunityadmindirectory().getPasswordManager().remove(patient.getPassword());
+                JOptionPane.showMessageDialog(this, "Hospital Admin Deleted");
+                fname1.setText("");
+                lname1.setText("");
+                dob1.setDate(null);
+                gender1.setText("");
+                email1.setText("");
+                pnum1.setText("");
+                add3.setText("");
+                add4.setText("");
+                state1.setText("");
+                city1.setSelectedItem(null);
+                community1.setSelectedItem(null);
+                zipcode1.setText("");
+                search.setText("");
+                TableFilling();
+                break;
+            }}
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
+        // TODO add your handling code here:
+
+        String emailsearch = search.getText();
+        boolean found = false;
+        for(Person patient : ecoSystem.getPersonDirectory().getPersonList())
+        {
+            if (patient.getEmailId().equals(emailsearch))
+            {
+                fname1.setText(patient.getFirstName());
+                lname1.setText(patient.getLastName());
+                dob1.setDate(patient.getDateOfBirth());
+                gender1.setText(patient.getGender());
+                email1.setText(patient.getEmailId());
+                pnum1.setText(String.valueOf(patient.getPhoneNumber()));
+                add3.setText(patient.getHouse().getAddressLine1());
+                add4.setText(patient.getHouse().getAddressLine2());
+                state1.setText(patient.getHouse().getState());
+                city1.setSelectedItem(patient.getHouse().getCity().getCity());
+                community1.setSelectedItem(patient.getHouse().getCommunity().getCommunity());
+                zipcode1.setText(String.valueOf(patient.getHouse().getZipCode()));
+                found = true;
+                break;
+            }
+            
+        }
+        if(!found)
+        JOptionPane.showMessageDialog(this, "Hospital Admin not Found");
+    }//GEN-LAST:event_viewActionPerformed
+
+    private void community1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_community1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_community1ActionPerformed
+
+    private void city1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_city1ActionPerformed
+        // TODO add your handling code here:
+
+        community1.removeAllItems();
+        for(Community c:ecoSystem.getCommunityList()){
+            community1.setSelectedItem(null);
+
+            if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
+            {
+                community1.addItem(c.getCommunity().toString());
+
+            }
+        }
+    }//GEN-LAST:event_city1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField add1;
+    private javax.swing.JTextField add2;
+    private javax.swing.JTextField add3;
+    private javax.swing.JTextField add4;
     private javax.swing.JTextField address;
+    private javax.swing.JTextField addressUpdate;
+    private javax.swing.JComboBox<String> city;
+    private javax.swing.JComboBox<String> city1;
     private javax.swing.JComboBox<String> cityBox;
+    private javax.swing.JComboBox<String> cityBoxUpdate;
+    private javax.swing.JComboBox<String> community;
+    private javax.swing.JComboBox<String> community1;
     private javax.swing.JComboBox<String> communityBox;
+    private javax.swing.JComboBox<String> communityBoxUpdate;
+    private javax.swing.JTable communityadmin;
     private javax.swing.JButton createHospital;
+    private javax.swing.JButton delete;
+    private javax.swing.JButton deleteHospital;
+    private com.toedter.calendar.JDateChooser dob;
+    private com.toedter.calendar.JDateChooser dob1;
+    private javax.swing.JTextField email;
+    private javax.swing.JTextField email1;
+    private javax.swing.JTextField fname;
+    private javax.swing.JTextField fname1;
+    private javax.swing.JComboBox<String> gender;
+    private javax.swing.JTextField gender1;
+    private javax.swing.JTextField hospSearchTxt;
     private javax.swing.JTextField hospitalName;
+    private javax.swing.JTextField hospitalNameUpdate;
     private javax.swing.JTable hospitalTable;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField lname;
+    private javax.swing.JTextField lname1;
+    private javax.swing.JTextField password;
+    private javax.swing.JTextField personid;
     private javax.swing.JTextField phoneNumber;
+    private javax.swing.JTextField phoneNumberUpdate;
+    private javax.swing.JTextField pnum;
+    private javax.swing.JTextField pnum1;
+    private javax.swing.JTextField search;
+    private javax.swing.JButton searchHospital;
+    private javax.swing.JTextField state;
+    private javax.swing.JTextField state1;
+    private javax.swing.JButton update;
+    private javax.swing.JButton updateHospital;
+    private javax.swing.JButton view;
+    private javax.swing.JTextField zipcode;
+    private javax.swing.JTextField zipcode1;
     // End of variables declaration//GEN-END:variables
 }

@@ -29,6 +29,8 @@ public class Ecosystem {
     private HospitalHistory hospitalhistory;
     private DoctorDirectory doctorDirectory;
     private SystemAdminDirectory systemAdminDirectory;
+    private HospitalAdminDirectory hospitaladmindirectory;
+    private CommunityAdminDirectory communityadmindirectory;
     private ArrayList<City> cityList;    
     private ArrayList<Community> communityList;
     private ArrayList<String> cityListComboBox;
@@ -42,6 +44,8 @@ public class Ecosystem {
         doctorDirectory = new DoctorDirectory();
         hospitalhistory = new HospitalHistory();
         systemAdminDirectory = new SystemAdminDirectory();
+        hospitaladmindirectory = new HospitalAdminDirectory();
+        communityadmindirectory = new CommunityAdminDirectory();
         cityList = new ArrayList<City>();        
         communityList = new ArrayList<Community>();
         cityListComboBox = new ArrayList<String>();        
@@ -144,6 +148,23 @@ City city1 = new City("Boston");
 //        doctorDirectory.getDoctorList().add(s1);
 
 }
+
+    public HospitalAdminDirectory getHospitaladmindirectory() {
+        return hospitaladmindirectory;
+    }
+
+    public void setHospitaladmindirectory(HospitalAdminDirectory hospitaladmindirectory) {
+        this.hospitaladmindirectory = hospitaladmindirectory;
+    }
+
+    public CommunityAdminDirectory getCommunityadmindirectory() {
+        return communityadmindirectory;
+    }
+
+    public void setCommunityadmindirectory(CommunityAdminDirectory communityadmindirectory) {
+        this.communityadmindirectory = communityadmindirectory;
+    }
+
     public HospitalHistory getHospitalhistory() {
         return hospitalhistory;
     }
@@ -260,6 +281,12 @@ City city1 = new City("Boston");
             house2.setCommunity(community2);
 
             Date dateVal = new Date();
+            Person person = new Person("Sujith", "Kaluva", dateVal, "community@gmail.com", "Male", 9898989898l, house1, "community" );
+           // system.personDirectory.addPerson(person);
+            Person person1 = new Person("Sreeja", "Vangoori", dateVal, "hospital@gmail.com", "Female", 1234567890l, house2, "hospital");
+           // system.personDirectory.addPerson(person1);
+            system.communityadmindirectory.addPasswordManager("community@gmail.com", "community");
+            system.hospitaladmindirectory.addPasswordManager("hospital@gmail.com", "hospital");
 
 //            Person p = new Person("Taylor", "Swift", dateVal, "taylor@gmail.com", "Female", 1345678902l, house1, "Taylor");
 //            Person p1 = new Person("Jonathan", "Smith", dateVal, "jonathan@gmail.com", "Male", 4444444444l, house1, "Jonathan");
@@ -276,8 +303,14 @@ City city1 = new City("Boston");
 
             Doctor s = new Doctor("Cardiologist", "MBBS", 15, hosp1, "Jonathan", "Smith", dateVal, "jonathan@gmail.com", "Male", 4444444444l, house1, "Jonathan");
             Doctor s1 = new Doctor("Neurologist", "MBBS", 10, hosp2, "Taylor", "Swift", dateVal, "taylor@gmail.com", "Female", 1345678902l, house2, "Taylor");
-            system.doctorDirectory.getDoctorList().add(s);
-            system.doctorDirectory.getDoctorList().add(s1);
+            system.doctorDirectory.addDoctor(s);
+            system.doctorDirectory.addDoctor(s1);
+            VitalSigns vt = new VitalSigns(190, 180, 300, 200, 100, 230, 430);
+            VitalSigns vr = new VitalSigns(180, 340, 530, 259, 78, 90, 123);
+            Encounter en = new Encounter(dateVal, "Heart Attack", pat, vt, s);
+            Encounter en1 = new Encounter(dateVal, "Amnesia", pat1, vr, s1);
+            system.encounterHistory.addEncounter(en1);
+            system.encounterHistory.addEncounter(en);
         }
         return system;
     }
