@@ -456,8 +456,9 @@ private void displayObject(ProductDetails productdetails){
     jTextEmail_Address.setText(productdetails.getEmail());
     jTextLevel.setText(productdetails.getLevel());
     jTextPosition_Title.setText(productdetails.getPosition_Title());
+     jTextTeam_Info.setText(productdetails.getTeam_info()); 
     jTextStart_Date.setText(sanju.format(productdetails.getStart_Date()));
-    jTextTeam_Info.setText(productdetails.getTeam_info());  
+    
     
 }
 

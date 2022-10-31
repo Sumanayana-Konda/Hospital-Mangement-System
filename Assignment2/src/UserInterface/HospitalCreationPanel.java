@@ -1365,7 +1365,7 @@ public boolean validateData(JComponent input) {
         String emailsearch = search.getText();
         boolean validated = false;
         boolean validatedOtherFields = false;
-        String selectedCity = city1.getSelectedItem()==null?"":city.getSelectedItem().toString();
+        String selectedCity = city1.getSelectedItem()==null?"":city1.getSelectedItem().toString();
         String selectedCommunity = community1.getSelectedItem()==null?"":community1.getSelectedItem().toString();
         String selectedGender = gender1.getSelectedItem().toString();
         JDateChooser strtDt = dob1;
@@ -1414,8 +1414,8 @@ public boolean validateData(JComponent input) {
                 add3.setText("");
                 add4.setText("");
                 state1.setText("");
-                city1.setSelectedItem(null);
-                community1.setSelectedItem(null);
+                //city1.setSelectedItem(null);
+                //community1.setSelectedItem(null);
                 zipcode1.setText("");
                 search.setText("");
                TableFilling();

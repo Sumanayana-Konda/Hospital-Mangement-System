@@ -94,7 +94,8 @@ public class ReadJPanel extends javax.swing.JPanel {
             lines[1] = p.getEmployee_ID();
             lines[2] = p.getAge();
             lines[3] = p.getGender();
-            lines[4] = sanju.format(p.getStart_Date());
+            
+            lines[4] = p.getStart_Date();
             lines[5] = p.getLevel();
             lines[6] = p.getTeam_info();
             lines[7] = p.getPosition_Title();

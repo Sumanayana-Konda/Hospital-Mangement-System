@@ -12,7 +12,7 @@ import model.ProductDetails;
  * @author sumanayanakonda
  */
 public class MainJFrame extends javax.swing.JFrame {
-
+   
     /**
      * Creates new form MainJFrame
      */

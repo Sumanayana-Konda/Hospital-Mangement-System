@@ -4,7 +4,6 @@
  */
 package ui;
 
-import javax.swing.JOptionPane;
 import model.EmployeeData;
 import model.ProductDetails;
 import java.awt.image.BufferedImage;
@@ -18,7 +17,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -328,6 +327,7 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         }
         
+        
         if(validated){
         
         int Age = Integer.parseInt(jTextAge.getText());
@@ -381,7 +381,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jUploadActionPerformed
 public boolean validation(JComponent input) 
-{       
+{       Date s = jDateChooser.getDate();
         String x = input.getName();
         String Merror="";
         boolean raiseError = false;
@@ -391,6 +391,11 @@ public boolean validation(JComponent input)
             raiseError = true;
             Merror = String.format("Enter a Value. %s cannot be empty", x);
         }
+        else if(s == null){
+            raiseError = true;
+            Merror = String.format("Enter a Value. Start Date cannot be empty");
+        }
+        
         else
         {
             switch (x) {
@@ -401,18 +406,20 @@ public boolean validation(JComponent input)
                         Merror = String.format("Enter correct %s", x);
                     }   break;
                 case "Phone_Number":
+                    if(!tex.matches("^[0-9]{10}")){
+                        raiseError = true;
+                        Merror = String.format("Enter correct %s", x);
+                    }
+                    else{
                     
                     for (ProductDetails productdetails : historyArrayList.getHistoryArrayList())
                   {
-                   if (String.valueOf(productdetails.getPhone_Number()).equals(tex))
+                      if (String.valueOf(productdetails.getPhone_Number()).equals(tex))
                   {
                    raiseError = true;
                     Merror = String.format("Phone Number Already exists. Enter a new one", x);
                     break;
                      }
-                    if(!tex.matches("^[0-9]{10}")){
-                        raiseError = true;
-                        Merror = String.format("Enter correct %s", x);
                     }}
                      
                     break;
@@ -425,19 +432,29 @@ public boolean validation(JComponent input)
                     Merror = String.format("Employee ID Already exists. Enter a new one", x);
                      }
                     }    break;
+                case "Age":
+                    if (!tex.matches("^[0-9]{1}|[0-9]{2}|[0-9]{3}"))
+                    {
+                        raiseError = true;
+                        Merror = String.format("Enter correct %s", x);
+                    }break;
                 case "Email":
-                   for (ProductDetails productdetails : historyArrayList.getHistoryArrayList())
+                    
+                    if(!tex.matches("^(.+)@(.+)$")){
+                        raiseError = true;
+                        Merror = String.format("Enter correct %s", x);
+                    } 
+                    else{
+                    
+                  for (ProductDetails productdetails : historyArrayList.getHistoryArrayList())
                   {
-                   if (String.valueOf(productdetails.getEmail()).equals(tex))
+                  if (String.valueOf(productdetails.getEmail()).equals(tex))
                   {
                   raiseError = true;
                   Merror = String.format("Email already Exists. Enter a new one");
                   break;
                   } 
-                    if(!tex.matches("^(.+)@(.+)$")){
-                        raiseError = true;
-                        Merror = String.format("Enter correct %s", x);
-                    } }  break;
+                  } } break;
                    
                 default:
                     break;

@@ -446,8 +446,9 @@ public class UPDATEJPanel extends javax.swing.JPanel {
     jTextEmail_Address.setText(productdetails.getEmail());
     jTextLevel.setText(productdetails.getLevel());
     jTextPosition_Title.setText(productdetails.getPosition_Title());
-   jDateChooser1.setDate(productdetails.getStart_Date());
-    jTextTeam_Info.setText(productdetails.getTeam_info());  
+   jTextTeam_Info.setText(productdetails.getTeam_info()); 
+    jDateChooser1.setDate(productdetails.getStart_Date());
+     
     
 }
 

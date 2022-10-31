@@ -330,6 +330,11 @@ public class CommunityPanel extends javax.swing.JPanel {
         jLabel13.setText("City:");
 
         city.setBackground(new java.awt.Color(153, 153, 255));
+        city.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cityItemStateChanged(evt);
+            }
+        });
         city.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cityActionPerformed(evt);
@@ -952,16 +957,7 @@ public boolean validateData(JComponent input) {
     private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
         // TODO add your handling code here:
         
-        community.removeAllItems();
-        for(Community c:ecoSystem.getCommunityList()){
-            community.setSelectedItem(null);
-            
-             if(c.getCity().getCity().equals(city.getSelectedItem()==null?"":city.getSelectedItem().toString()))
-             {   
-                 community.addItem(c.getCommunity().toString());
-                 
-             }
-         }
+        
         
     }//GEN-LAST:event_cityActionPerformed
 
@@ -970,7 +966,7 @@ public boolean validateData(JComponent input) {
        
         boolean validated = false;
         boolean validatedOtherFields = false;
-        String selectedCity = city1.getSelectedItem()==null?"":city.getSelectedItem().toString();
+        String selectedCity = city1.getSelectedItem()==null?"":city1.getSelectedItem().toString();
         String selectedCommunity = community1.getSelectedItem()==null?"":community1.getSelectedItem().toString();
         String selectedGender = gender1.getSelectedItem().toString();
         JDateChooser strtDt = dob1;
@@ -1018,8 +1014,8 @@ public boolean validateData(JComponent input) {
                 add3.setText("");
                 add4.setText("");
                 state1.setText("");
-                city1.setSelectedItem(null);
-                community1.setSelectedItem(null);
+               // city1.setSelectedItem(null);
+                //community1.setSelectedItem(null);
                 zipcode1.setText("");
                 search.setText("");
                TableFilling();
@@ -1060,7 +1056,7 @@ public boolean validateData(JComponent input) {
 
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         // TODO add your handling code here:
-HashMap<String,String> pManager;
+        HashMap<String,String> pManager;
 
         String emailsearch = search.getText();
         boolean found = false;
@@ -1117,6 +1113,20 @@ HashMap<String,String> pManager;
         }
         
     }//GEN-LAST:event_city1ItemStateChanged
+
+    private void cityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityItemStateChanged
+        // TODO add your handling code here:
+        community.removeAllItems();
+        for(Community c:ecoSystem.getCommunityList()){
+            community.setSelectedItem(null);
+            
+             if(c.getCity().getCity().equals(city.getSelectedItem()==null?"":city.getSelectedItem().toString()))
+             {   
+                 community.addItem(c.getCommunity().toString());
+                 
+             }
+         }
+    }//GEN-LAST:event_cityItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
