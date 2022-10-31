@@ -310,6 +310,11 @@ public class PatientsDirectoryUI extends javax.swing.JPanel {
 
         city.setBackground(new java.awt.Color(153, 153, 255));
         city.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        city.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cityItemStateChanged(evt);
+            }
+        });
         city.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cityActionPerformed(evt);
@@ -549,6 +554,11 @@ public class PatientsDirectoryUI extends javax.swing.JPanel {
         jLabel25.setText("City :");
 
         city1.setBackground(new java.awt.Color(153, 153, 255));
+        city1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                city1ItemStateChanged(evt);
+            }
+        });
         city1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 city1ActionPerformed(evt);
@@ -727,16 +737,7 @@ public class PatientsDirectoryUI extends javax.swing.JPanel {
     private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
         // TODO add your handling code here:
 
-        community.removeAllItems();
-        for(Community c:ecoSystem.getCommunityList()){
-            community.setSelectedItem(null);
-
-            if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
-            {
-                community.addItem(c.getCommunity().toString());
-
-            }
-        }
+       
     }//GEN-LAST:event_cityActionPerformed
 
     private void communityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityActionPerformed
@@ -879,16 +880,7 @@ public class PatientsDirectoryUI extends javax.swing.JPanel {
 
     private void city1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_city1ActionPerformed
         // TODO add your handling code here:
-        community1.removeAllItems();
-        for(Community c:ecoSystem.getCommunityList()){
-            community1.setSelectedItem(null);
-
-            if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
-            {
-                community1.addItem(c.getCommunity().toString());
-
-            }
-        }
+        
     }//GEN-LAST:event_city1ActionPerformed
 
     private void community1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_community1ActionPerformed
@@ -1005,6 +997,34 @@ public class PatientsDirectoryUI extends javax.swing.JPanel {
     private void stateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_stateActionPerformed
+
+    private void city1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_city1ItemStateChanged
+        // TODO add your handling code here:
+        community1.removeAllItems();
+        for(Community c:ecoSystem.getCommunityList()){
+            community1.setSelectedItem(null);
+
+            if(c.getCity().getCity().equals(city1.getSelectedItem().toString()))
+            {
+                community1.addItem(c.getCommunity().toString());
+
+            }
+        }
+    }//GEN-LAST:event_city1ItemStateChanged
+
+    private void cityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityItemStateChanged
+        // TODO add your handling code here:
+         community.removeAllItems();
+        for(Community c:ecoSystem.getCommunityList()){
+            community.setSelectedItem(null);
+
+            if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
+            {
+                community.addItem(c.getCommunity().toString());
+
+            }
+        }
+    }//GEN-LAST:event_cityItemStateChanged
 
 public boolean validateData(JComponent input) {
         String name = input.getName();

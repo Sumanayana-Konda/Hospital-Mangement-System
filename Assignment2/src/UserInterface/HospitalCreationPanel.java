@@ -416,6 +416,11 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
                 cityBoxUpdateItemStateChanged(evt);
             }
         });
+        cityBoxUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cityBoxUpdateActionPerformed(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel12.setText("Community :");
@@ -1526,6 +1531,10 @@ public boolean validateData(JComponent input) {
             }
         }
     }//GEN-LAST:event_cityItemStateChanged
+
+    private void cityBoxUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityBoxUpdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cityBoxUpdateActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField add1;
