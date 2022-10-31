@@ -45,7 +45,7 @@ public class ViewEncounterdoctor extends javax.swing.JPanel {
         setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("Encounter History : All Patients");
+        jLabel1.setText("Encounter History ");
 
         encounterHistoryTable.setBackground(new java.awt.Color(153, 153, 255));
         encounterHistoryTable.setForeground(new java.awt.Color(0, 51, 102));

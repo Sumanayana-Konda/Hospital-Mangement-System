@@ -58,6 +58,11 @@ Patient patient;
 
         jLabel2.setText("Select Hospital:");
 
+        hospital.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                hospitalItemStateChanged(evt);
+            }
+        });
         hospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hospitalActionPerformed(evt);
@@ -153,6 +158,11 @@ Patient patient;
     private void hospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalActionPerformed
         // TODO add your handling code here:
         
+        
+    }//GEN-LAST:event_hospitalActionPerformed
+
+    private void hospitalItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_hospitalItemStateChanged
+        // TODO add your handling code here:
         DefaultComboBoxModel<String> mode1 = new DefaultComboBoxModel<String>();
         for (Doctor d:ecoSystem.getDoctorDirectory().getDoctorList()){
         if (hospital.getSelectedItem().toString().equals(d.getHospital().getHospitalName()))
@@ -161,7 +171,7 @@ Patient patient;
         }
             }
         doctor.setModel(mode1);
-    }//GEN-LAST:event_hospitalActionPerformed
+    }//GEN-LAST:event_hospitalItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

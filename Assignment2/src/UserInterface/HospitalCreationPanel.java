@@ -1099,7 +1099,7 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
 
     private void cityBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityBoxItemStateChanged
         // TODO add your handling code here:
-        String cityName = cityBox.getSelectedItem().toString();
+        String cityName = cityBox.getSelectedItem()==null?"":cityBox.toString();
         ArrayList<String> communityBoxList = new ArrayList<String>();
         for(Community c:ecoSystem.getCommunityList()){
             if(c.getCity().getCity().equals(cityName)){
@@ -1172,7 +1172,7 @@ private void TableFilling() {
 
     private void cityBoxUpdateItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityBoxUpdateItemStateChanged
         // TODO add your handling code here:
-        String cityName = cityBoxUpdate.getSelectedItem().toString();
+        String cityName = cityBoxUpdate.getSelectedItem()==null?"":cityBoxUpdate.toString();
         ArrayList<String> communityBoxList = new ArrayList<String>();
         for(Community c:ecoSystem.getCommunityList()){
             if(c.getCity().getCity().equals(cityName)){

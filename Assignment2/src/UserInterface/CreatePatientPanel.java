@@ -599,7 +599,7 @@ public class CreatePatientPanel extends javax.swing.JPanel {
 
     private void cityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityItemStateChanged
         // TODO add your handling code here:
-        String cityName = city.getSelectedItem().toString();
+        String cityName = city.getSelectedItem()==null?"":city.toString();
         ArrayList<String> communityBoxList = new ArrayList<String>();
         for(Community c:ecoSystem.getCommunityList()){
             if(c.getCity().getCity().equals(cityName)){

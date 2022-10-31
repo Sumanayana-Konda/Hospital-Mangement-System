@@ -62,6 +62,11 @@ Ecosystem ecoSystem = Ecosystem.getInstance();
         jLabel3.setText("Community Name :");
 
         city.setBackground(new java.awt.Color(153, 153, 255));
+        city.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cityItemStateChanged(evt);
+            }
+        });
         city.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cityActionPerformed(evt);
@@ -196,6 +201,10 @@ Ecosystem ecoSystem = Ecosystem.getInstance();
         //Update table with new community
         populateCommunityTable();
     }//GEN-LAST:event_addCommunityBtnActionPerformed
+
+    private void cityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cityItemStateChanged
 public void populateCommunityTable(){
         DefaultTableModel model = (DefaultTableModel) communityTable.getModel();
             model.setRowCount(0);

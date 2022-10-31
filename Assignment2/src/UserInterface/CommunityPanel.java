@@ -1105,7 +1105,7 @@ public boolean validateData(JComponent input) {
         for(Community c:ecoSystem.getCommunityList()){
             community1.setSelectedItem(null);
 
-            if(c.getCity().getCity().equals(city1.getSelectedItem().toString()))
+            if(c.getCity().getCity().equals(city1.getSelectedItem()==null?"":city1.toString()))
             {
                 community1.addItem(c.getCommunity().toString());
 
