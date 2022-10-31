@@ -109,7 +109,7 @@ public class HospitalAdminWorkArea extends javax.swing.JPanel {
                 .addComponent(hospitalsPanel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(encounterPanel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 351, Short.MAX_VALUE)
                 .addComponent(logOutAdmin)
                 .addGap(14, 14, 14))
         );
@@ -133,7 +133,7 @@ public class HospitalAdminWorkArea extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(hospitalNameLabel))
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(364, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,7 +142,7 @@ public class HospitalAdminWorkArea extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(hospitalNameLabel)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap(335, Short.MAX_VALUE))
         );
 
         mainPanel.setRightComponent(jPanel3);
@@ -151,11 +151,11 @@ public class HospitalAdminWorkArea extends javax.swing.JPanel {
         Jpanel1.setLayout(Jpanel1Layout);
         Jpanel1Layout.setHorizontalGroup(
             Jpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 872, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 990, Short.MAX_VALUE)
         );
         Jpanel1Layout.setVerticalGroup(
             Jpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -193,7 +193,7 @@ public class HospitalAdminWorkArea extends javax.swing.JPanel {
 
     private void hospitalsPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalsPanelActionPerformed
         // TODO add your handling code here:
-        HospitalCreationPanel hospPanel = new HospitalCreationPanel();
+        HospitalAdminHospital hospPanel = new HospitalAdminHospital();
         mainPanel.setRightComponent(hospPanel);
     }//GEN-LAST:event_hospitalsPanelActionPerformed
 

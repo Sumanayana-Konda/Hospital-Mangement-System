@@ -11,11 +11,14 @@ import Model.Community;
 import Model.House;
 import Model.Patient;
 import Model.Person;
+import com.toedter.calendar.JDateChooser;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -44,6 +47,36 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
         city1.setModel(cityMode);
 //        DefaultComboBoxModel communityModelList = new DefaultComboBoxModel(ecoSystem.getCommunityListComboBox().toArray());
 //        communityBox.setModel(communityModelList);
+        fname.setName("First Name");
+        lname.setName("Last Name");
+        personid.setName("Person ID");
+        dob.setName("Date of Birth");
+        add1.setName("Address Line 1");
+        add2.setName("Address Line 2");
+        gender.setName("Gender");
+        email.setName("Email");
+        pnum.setName("Phone Number");
+        state.setName("State");
+        city.setName("City");
+        community.setName("Community");
+        zipcode.setName("Zipcode");
+        password.setName("Password");
+        fname1.setName("First Name");
+        lname1.setName("Last Name");
+        //personid1.setName("Person ID");
+        dob1.setName("Date of Birth");
+        add3.setName("Address Line 1");
+        add4.setName("Address Line 2");
+        gender1.setName("Gender");
+        email1.setName("Email");
+        pnum1.setName("Phone Number");
+        state1.setName("State");
+        city1.setName("City");
+        community1.setName("Community");
+        zipcode1.setName("Zipcode");
+
+
+
     }
     
     public void populateHospitals(){
@@ -155,7 +188,6 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         zipcode1 = new javax.swing.JTextField();
-        gender1 = new javax.swing.JTextField();
         state1 = new javax.swing.JTextField();
         email1 = new javax.swing.JTextField();
         add4 = new javax.swing.JTextField();
@@ -167,6 +199,7 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
         dob1 = new com.toedter.calendar.JDateChooser();
         community1 = new javax.swing.JComboBox<>();
         city1 = new javax.swing.JComboBox<>();
+        gender1 = new javax.swing.JComboBox<>();
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -426,23 +459,23 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
                     .addComponent(cityBoxUpdate, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(communityBoxUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(125, 125, 125))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(334, 334, 334)
-                        .addComponent(updateHospital)
-                        .addGap(47, 47, 47)
-                        .addComponent(deleteHospital))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(hospSearchTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(searchHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(402, 402, 402))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(213, 213, 213)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(hospSearchTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(308, 308, 308)
+                        .addComponent(updateHospital)
+                        .addGap(71, 71, 71)
+                        .addComponent(deleteHospital)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -475,11 +508,11 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(communityBoxUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(updateHospital)
                     .addComponent(deleteHospital))
-                .addGap(70, 70, 70))
+                .addGap(224, 224, 224))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -552,6 +585,11 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
         jLabel23.setText("City:");
 
         city.setBackground(new java.awt.Color(153, 153, 255));
+        city.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cityItemStateChanged(evt);
+            }
+        });
         city.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cityActionPerformed(evt);
@@ -799,8 +837,6 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
 
         zipcode1.setBackground(new java.awt.Color(153, 153, 255));
 
-        gender1.setBackground(new java.awt.Color(153, 153, 255));
-
         state1.setBackground(new java.awt.Color(153, 153, 255));
 
         email1.setEditable(false);
@@ -852,11 +888,18 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
 
         city1.setBackground(new java.awt.Color(153, 153, 255));
         city1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        city1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                city1ItemStateChanged(evt);
+            }
+        });
         city1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 city1ActionPerformed(evt);
             }
         });
+
+        gender1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -881,40 +924,41 @@ public class HospitalCreationPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(state1)
-                                    .addComponent(community1, 0, 196, Short.MAX_VALUE))
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel8Layout.createSequentialGroup()
-                                        .addGap(24, 24, 24)
-                                        .addComponent(jLabel32))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel28)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                                .addComponent(update)
-                                .addGap(55, 55, 55)))
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(zipcode1)
-                            .addComponent(delete)
-                            .addComponent(city1, 0, 283, Short.MAX_VALUE)))
-                    .addComponent(add4)
-                    .addComponent(add3)
-                    .addComponent(pnum1)
-                    .addComponent(gender1)
-                    .addComponent(email1)
-                    .addComponent(lname1)
-                    .addComponent(fname1)
-                    .addComponent(search)
-                    .addComponent(dob1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 107, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel8Layout.createSequentialGroup()
+                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(state1)
+                                        .addComponent(community1, 0, 196, Short.MAX_VALUE))
+                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel8Layout.createSequentialGroup()
+                                            .addGap(24, 24, 24)
+                                            .addComponent(jLabel32))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel28)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                    .addComponent(update)
+                                    .addGap(55, 55, 55)))
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(zipcode1)
+                                .addComponent(delete)
+                                .addComponent(city1, 0, 283, Short.MAX_VALUE)))
+                        .addComponent(add4)
+                        .addComponent(add3)
+                        .addComponent(pnum1)
+                        .addComponent(email1)
+                        .addComponent(lname1)
+                        .addComponent(fname1)
+                        .addComponent(search)
+                        .addComponent(dob1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(gender1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(356, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel37)
@@ -1196,21 +1240,36 @@ private void TableFilling() {
     private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
         // TODO add your handling code here:
 
-        community.removeAllItems();
-        for(Community c:ecoSystem.getCommunityList()){
-            community.setSelectedItem(null);
-
-            if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
-            {
-                community.addItem(c.getCommunity().toString());
-
-            }
-        }
 
     }//GEN-LAST:event_cityActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        boolean validated = false;
+        boolean validatedOtherFields = false;
+        String selectedCity = city.getSelectedItem()==null?"":city.getSelectedItem().toString();
+        String selectedCommunity = community.getSelectedItem()==null?"":community.getSelectedItem().toString();
+        String selectedGender = gender.getSelectedItem().toString();
+        JDateChooser strtDt = dob;
+        if(!selectedCity.isEmpty() && !selectedCommunity.isEmpty() && !selectedGender.isEmpty() && strtDt!=null){
+            validatedOtherFields = true;
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "All Fields are Mandatory!");
+        }
+        JTextField[] VARIABLE_CONSTANTS = {state, fname, lname, zipcode, add1, add2, email, pnum, personid, password};
+        for (JTextField field : VARIABLE_CONSTANTS) {
+            if (!validateData(field)) {
+                validated = false;
+                break;
+            } else {
+                validated = true;
+                System.out.println("Validated");
+            }
+        }
+        if (validated && validatedOtherFields) {
+        
         City city1 = new City(city.getSelectedItem().toString());
         Community com = new Community();
         com.setCommunity(community.getSelectedItem().toString());
@@ -1240,20 +1299,104 @@ private void TableFilling() {
                 community.setSelectedItem(null);
                 zipcode.setText("");
                 password.setText("");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+public boolean validateData(JComponent input) {
+   // HashMap<String,String> pManager;    
+    String name = input.getName();
+       // pManager = ecoSystem.getCommunityadmindirectory().getPasswordManager();
+        String errorMsg = "";
+        boolean raiseError = false;
+        String text = ((JTextField) input).getText().trim();
+        if (text == null || text.isEmpty()) {
+            raiseError = true;
+            errorMsg = String.format("Please enter a value. The value for %s cannot be empty", name);
+        } else {
+            switch (name) {
+                case "First Name":
+                    if (!text.matches("^[a-zA-z ]*$")) {
+                        raiseError = true;
+                        errorMsg = String.format("Please enter valid values for %s", name);
+                    }
+                    break;
+                case "Last Name":
+                    if (!text.matches("^[a-zA-z ]*$")) {
+                        raiseError = true;
+                        errorMsg = String.format("Please enter valid values for %s", name);
+                    }
+                    break;
+                case "Phone Number":
+                    if (!text.matches("^[0-9]{10}")) {
+                        raiseError = true;
+                        errorMsg = String.format("Please enter a valid %s", name);
+                    }
+                    break;
+                    case "Zipcode":
+                    if (!text.matches("^[0-9]{5}")) {
+                        raiseError = true;
+                        errorMsg = String.format("Please enter a valid %s", name);
+                    }
+                    break;
+                case "Email":
+                    for(Person sanju:ecoSystem.getPersonDirectory().getPersonList()){
+                    if (sanju.getEmailId().equals(text)){
+                        raiseError = true;
+                        errorMsg = String.format("Email Id already exists, please enter a valid mail Id", name);
+                        break;
+                    }}
+                    if (!text.matches("^(.+)@(.+)$")) {
+                        raiseError = true;
+                        errorMsg = String.format("Please enter a valid %s", name);
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        if (raiseError) {
+            JOptionPane.showMessageDialog(this, errorMsg);
+            return false;
+        }
+        return true;}
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
         String emailsearch = search.getText();
-        for(Person patient : ecoSystem.getPersonDirectory().getPersonList())
-        {
-            if (patient.getEmailId().equals(emailsearch))
-            {
+        boolean validated = false;
+        boolean validatedOtherFields = false;
+        String selectedCity = city1.getSelectedItem()==null?"":city.getSelectedItem().toString();
+        String selectedCommunity = community1.getSelectedItem()==null?"":community1.getSelectedItem().toString();
+        String selectedGender = gender1.getSelectedItem().toString();
+        JDateChooser strtDt = dob1;
+        if(!selectedCity.isEmpty() && !selectedCommunity.isEmpty() && !selectedGender.isEmpty() && strtDt!=null){
+            validatedOtherFields = true;
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "All Fields are Mandatory!");
+        }
+        JTextField[] VARIABLE_CONSTANTS = {state1, fname1, lname1, zipcode1, add3, add4, pnum1};
+        for (JTextField field : VARIABLE_CONSTANTS) {
+            if (!validateData(field)) {
+                validated = false;
+                break;
+            } else {
+                validated = true;
+                System.out.println("Validated");
+            }
+        }
+        if (validated && validatedOtherFields) {
+        HashMap<String,String> pManager;
+        //String emailsearch = search.getText();
+        pManager = ecoSystem.getHospitaladmindirectory().getPasswordManager();
+        for (Person patient : ecoSystem.getPersonDirectory().getPersonList()){
+        if(pManager.containsKey(patient.getPassword()) && pManager.get(patient.getPassword()).equals(emailsearch)){
+               
 
                 patient.setFirstName(fname1.getText());
                 patient.setLastName(lname1.getText());
                 patient.setDateOfBirth(dob1.getDate());
-                patient.setGender(gender1.getText());
+                patient.setGender(gender1.getSelectedItem().toString());
                 patient.getHouse().setAddressLine1(add3.getText());
                 patient.getHouse().setAddressLine2(add4.getText());
                 patient.getHouse().getCity().setCity(city1.getSelectedItem().toString());
@@ -1265,7 +1408,7 @@ private void TableFilling() {
                 fname1.setText("");
                 lname1.setText("");
                 dob1.setDate(null);
-                gender1.setText("");
+                gender1.setSelectedItem("");
                 email1.setText("");
                 pnum1.setText("");
                 add3.setText("");
@@ -1278,24 +1421,26 @@ private void TableFilling() {
                TableFilling();
                 break;
             }}
-         JOptionPane.showMessageDialog(this, "Admin Not Found");
+         JOptionPane.showMessageDialog(this, "Admin Not Found");}
     }//GEN-LAST:event_updateActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
         String emailsearch = search.getText();
-        for(Person patient : ecoSystem.getPersonDirectory().getPersonList())
-        {
-            if (patient.getEmailId().equals(emailsearch))
-            {
-     ecoSystem.getCommunityadmindirectory().getPasswordManager().remove(patient.getPassword());
+        HashMap<String,String> pManager;
+        //String emailsearch = search.getText();
+        pManager = ecoSystem.getHospitaladmindirectory().getPasswordManager();
+        for (Person patient : ecoSystem.getPersonDirectory().getPersonList()){
+        if(pManager.containsKey(patient.getPassword()) && pManager.get(patient.getPassword()).equals(emailsearch)){
+           
+               ecoSystem.getHospitaladmindirectory().getPasswordManager().remove(patient.getPassword());
                 ecoSystem.getPersonDirectory().getPersonList().remove(patient);
               //  ecoSystem.getCommunityadmindirectory().getPasswordManager().remove(patient.getPassword());
                 JOptionPane.showMessageDialog(this, "Hospital Admin Deleted");
                 fname1.setText("");
                 lname1.setText("");
                 dob1.setDate(null);
-                gender1.setText("");
+                gender1.setSelectedItem("");
                 email1.setText("");
                 pnum1.setText("");
                 add3.setText("");
@@ -1315,14 +1460,16 @@ private void TableFilling() {
 
         String emailsearch = search.getText();
         boolean found = false;
-        for(Person patient : ecoSystem.getPersonDirectory().getPersonList())
-        {
-            if (patient.getEmailId().equals(emailsearch))
-            {
+        HashMap<String,String> pManager;
+        //String emailsearch = search.getText();
+        pManager = ecoSystem.getHospitaladmindirectory().getPasswordManager();
+        for (Person patient : ecoSystem.getPersonDirectory().getPersonList()){
+        if(pManager.containsKey(patient.getPassword()) && pManager.get(patient.getPassword()).equals(emailsearch)){
+           
                 fname1.setText(patient.getFirstName());
                 lname1.setText(patient.getLastName());
                 dob1.setDate(patient.getDateOfBirth());
-                gender1.setText(patient.getGender());
+                gender1.setSelectedItem(patient.getGender());
                 email1.setText(patient.getEmailId());
                 pnum1.setText(String.valueOf(patient.getPhoneNumber()));
                 add3.setText(patient.getHouse().getAddressLine1());
@@ -1347,18 +1494,38 @@ private void TableFilling() {
     private void city1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_city1ActionPerformed
         // TODO add your handling code here:
 
+        
+    }//GEN-LAST:event_city1ActionPerformed
+
+    private void city1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_city1ItemStateChanged
+        // TODO add your handling code here:
         community1.removeAllItems();
+          String cityName = city1.getSelectedItem()==null?"":city1.getSelectedItem().toString();
         for(Community c:ecoSystem.getCommunityList()){
             community1.setSelectedItem(null);
 
-            if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
+            if(c.getCity().getCity().equals(cityName))
             {
                 community1.addItem(c.getCommunity().toString());
 
             }
-        }
-    }//GEN-LAST:event_city1ActionPerformed
+           }
+    }//GEN-LAST:event_city1ItemStateChanged
 
+    private void cityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityItemStateChanged
+        // TODO add your handling code here:
+        String cityName = city.getSelectedItem()==null?"":city.getSelectedItem().toString();
+        community.removeAllItems();
+        for(Community c:ecoSystem.getCommunityList()){
+            community.setSelectedItem(null);
+
+            if(c.getCity().getCity().equals(cityName))
+            {
+                community.addItem(c.getCommunity().toString());
+
+            }
+        }
+    }//GEN-LAST:event_cityItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField add1;
@@ -1386,7 +1553,7 @@ private void TableFilling() {
     private javax.swing.JTextField fname;
     private javax.swing.JTextField fname1;
     private javax.swing.JComboBox<String> gender;
-    private javax.swing.JTextField gender1;
+    private javax.swing.JComboBox<String> gender1;
     private javax.swing.JTextField hospSearchTxt;
     private javax.swing.JTextField hospitalName;
     private javax.swing.JTextField hospitalNameUpdate;

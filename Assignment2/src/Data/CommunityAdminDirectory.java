@@ -27,6 +27,7 @@ public class CommunityAdminDirectory {
     }
     public HashMap<String, String> addPasswordManager(String a, String b) {
          passwordManager.put(b, a);
+         
          return passwordManager;
     }
 }

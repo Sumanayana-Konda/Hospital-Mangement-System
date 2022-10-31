@@ -31,14 +31,14 @@ public class AppointmentDoctor extends javax.swing.JPanel {
         initComponents();
         this.d=d;
         populateTable();
-        bodytemp.setText("Temperature");
-        bp.setText("Blood Pressure");
-        diagnosis.setText("Diagnosis");
-        oxy.setText("Oxygen Saturation");
-        pulse.setText("Pulse Rate");
-        weight.setText("Weight");
-        height.setText("Height");
-        resrate.setText("Respiratory Rate");
+        bodytemp.setName("Temperature");
+        bp.setName("Blood Pressure");
+        diagnosis.setName("Diagnosis");
+        oxy.setName("Oxygen Saturation");
+        pulse.setName("Pulse Rate");
+        weight.setName("Weight");
+        height.setName("Height");
+        resrate.setName("Respiratory Rate");
     }
 
     /**
@@ -265,7 +265,7 @@ public class AppointmentDoctor extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         boolean validated = false;
-        boolean validatedOtherFields = false;
+       // boolean validatedOtherFields = false;
         
         JTextField[] VARIABLE_CONSTANTS = {weight, height, diagnosis, bp, bodytemp, oxy, pulse, resrate};
         for (JTextField field : VARIABLE_CONSTANTS) {
@@ -278,16 +278,14 @@ public class AppointmentDoctor extends javax.swing.JPanel {
             }
         }
         
-         if (validated && validatedOtherFields) {
+         if (validated) {
         int c=encounter_history.getSelectedRow();
         for(Encounter e:ecoSystem.getEncounterHistory().getEncounterHistory()){
-            if(e.getEncounter_ID()== encounter_history.getValueAt(c, 0)){
+            if(e.getEncounter_ID().equals(encounter_history.getValueAt(c, 0))){
                 e.setDiagnosis(diagnosis.getText());
         VitalSigns vt=new VitalSigns(Integer.parseInt(bodytemp.getText()),Integer.parseInt(pulse.getText()),Integer.parseInt(resrate.getText()),Integer.parseInt(bp.getText()),Integer.parseInt(oxy.getText()),Integer.parseInt(weight.getText()),Integer.parseInt(height.getText()));
         e.setVitalSign(vt);
-            }
-        }
-         JOptionPane.showMessageDialog(this, "Encounter Added");
+        JOptionPane.showMessageDialog(this, "Encounter Added");
          
                 bodytemp.setText("");
                 pulse.setText("");
@@ -297,7 +295,10 @@ public class AppointmentDoctor extends javax.swing.JPanel {
                 weight.setText("");
                 height.setText("");
          
-        
+        populateTable();
+            }
+        }
+         
          }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -320,6 +321,14 @@ public class AppointmentDoctor extends javax.swing.JPanel {
     private void fetchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fetchActionPerformed
         // TODO add your handling code here:
         int s=encounter_history.getSelectedRow();
+        
+        int selectedRow = encounter_history.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please Select a Encounter");
+            return;
+        }
+        
         for(Encounter e:ecoSystem.getEncounterHistory().getEncounterHistory()){
             
             if(e.getEncounter_ID()== encounter_history.getValueAt(s, 0)){
@@ -395,43 +404,43 @@ public class AppointmentDoctor extends javax.swing.JPanel {
         } else {
             switch (name) {
                 case "Temperature":
-                    if (!text.matches("^[0-9]")) {
+                    if (!text.matches("^[0-9]{1}||[0-9]{2}||[0-9]{3}")) {
                         raiseError = true;
                         errorMsg = String.format("Please enter valid values for %s", name);
                     }
                     break;
                 case "Oxygen Saturation":
-                    if (!text.matches("^[0-9]")) {
+                    if (!text.matches("^[0-9]{1}||[0-9]{2}||[0-9]{3}")) {
                         raiseError = true;
                         errorMsg = String.format("Please enter valid values for %s", name);
                     }
                     break;
                 case "Blood Pressure":
-                    if (!text.matches("^[0-9]")) {
+                    if (!text.matches("^[0-9]{1}||[0-9]{2}||[0-9]{3}")) {
                         raiseError = true;
                         errorMsg = String.format("Please enter a valid %s", name);
                     }
                     break;
                 case "Pulse Rate":
-                    if (!text.matches("^[0-9]")) {
+                    if (!text.matches("^[0-9]{1}||[0-9]{2}||[0-9]{3}")) {
                         raiseError = true;
                         errorMsg = String.format("Please enter a valid %s", name);
                     }
                     break;
                  case "Weight":
-                    if (!text.matches("^[0-9]")) {
+                    if (!text.matches("^[0-9]{1}||[0-9]{2}||[0-9]{3}")) {
                         raiseError = true;
                         errorMsg = String.format("Please enter a valid %s", name);
                     }
                     break;
                  case "Height":
-                    if (!text.matches("^[0-9]")) {
+                    if (!text.matches("^[0-9]{1}||[0-9]{2}||[0-9]{3}")) {
                         raiseError = true;
                         errorMsg = String.format("Please enter a valid %s", name);
                     }
                     break;
                  case "Respiratory Rate":
-                    if (!text.matches("^[0-9]")) {
+                    if (!text.matches("^[0-9]{1}||[0-9]{2}||[0-9]{3}")) {
                         raiseError = true;
                         errorMsg = String.format("Please enter a valid %s", name);
                     }

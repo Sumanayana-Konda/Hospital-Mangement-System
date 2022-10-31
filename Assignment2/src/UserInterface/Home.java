@@ -250,7 +250,7 @@ public class Home extends javax.swing.JFrame {
     private void userRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userRoleActionPerformed
         // TODO add your handling code here:
         
-        if ((userRole.getSelectedItem().toString() == "System Admin")||(userRole.getSelectedItem().toString() == "Community Admin")||(userRole.getSelectedItem().toString() == "Hospital Admin")) {
+        if ((userRole.getSelectedItem().toString() == "Doctor")||(userRole.getSelectedItem().toString() == "System Admin")||(userRole.getSelectedItem().toString() == "Community Admin")||(userRole.getSelectedItem().toString() == "Hospital Admin")) {
             SignUp.setEnabled(false);
         } else {
             SignUp.setEnabled(true);

@@ -249,7 +249,12 @@ City city1 = new City("Boston");
             Community community2 = new Community();
             community2.setCity(city1);
             community2.setCommunity("Jamaica Plain");
-
+        Community community3 = new Community();
+        community3.setCity(city2);
+        community3.setCommunity("Worchester");
+        Community community4 = new Community();
+        community4.setCity(city2);
+        community4.setCommunity("Times Square");
             Hospital hosp1 = new Hospital();
             hosp1.setHospitalName("Roxbury Public Hospital");
             hosp1.setPhoneNumber(9876543210l);
@@ -261,9 +266,26 @@ City city1 = new City("Boston");
             hosp2.setHospitalName("Northeastern Hospital");
             hosp2.setPhoneNumber(9876543211l);
             hosp2.setCity(city1);
-            hosp2.setCommunity(community1);
+            hosp2.setCommunity(community2);
             hosp2.setAddress("John Street, 1");
 
+            Hospital hosp3 = new Hospital();
+        hosp3.setHospitalName("JP Hospital");
+        hosp3.setPhoneNumber(9876543212l);
+        hosp3.setCity(city1);
+        hosp3.setCommunity(community3);
+        hosp3.setAddress("Mike Street, 1");
+       // this.hospitalhistory.getHospitalList().add(hosp3);
+        //this.hospitalListComboBox.add(hosp3.getHospitalName());
+        
+        Hospital hosp4 = new Hospital();
+        hosp4.setHospitalName("George Hospital");
+        hosp4.setPhoneNumber(9876543213l);
+        hosp4.setCity(city2);
+        hosp4.setCommunity(community4);
+        hosp4.setAddress("Ray Street, 1");
+       // this.hospitalhistory.getHospitalList().add(hosp4);
+        
             House house1 = new House();
             house1.setAddressLine1("75 saint alphonsus");
             house1.setAddressLine2("307");
@@ -303,12 +325,17 @@ City city1 = new City("Boston");
 
             Doctor s = new Doctor("Cardiologist", "MBBS", 15, hosp1, "Jonathan", "Smith", dateVal, "jonathan@gmail.com", "Male", 4444444444l, house1, "Jonathan");
             Doctor s1 = new Doctor("Neurologist", "MBBS", 10, hosp2, "Taylor", "Swift", dateVal, "taylor@gmail.com", "Female", 1345678902l, house2, "Taylor");
+            Doctor s3 = new Doctor("Pediatrician", "MBBS", 10, hosp3, "Carl", "Jaden", dateVal, "carl@gmail.com", "Male", 1345678902l, house1, "Carl");
+            Doctor s4 = new Doctor("Orthopedician", "MBBS", 10, hosp4, "JungKook", "Jeon", dateVal, "jungkook@gmail.com", "Male", 1345678902l, house2, "Jungkook");
+            
             system.doctorDirectory.addDoctor(s);
             system.doctorDirectory.addDoctor(s1);
+            system.doctorDirectory.addDoctor(s3);
+            system.doctorDirectory.addDoctor(s4);
             VitalSigns vt = new VitalSigns(190, 180, 300, 200, 100, 230, 430);
             VitalSigns vr = new VitalSigns(180, 340, 530, 259, 78, 90, 123);
-            Encounter en = new Encounter(dateVal, "Heart Attack", pat, vt, s);
-            Encounter en1 = new Encounter(dateVal, "Amnesia", pat1, vr, s1);
+            Encounter en = new Encounter("1",dateVal, "Heart Attack", pat, vt, s);
+            Encounter en1 = new Encounter("2",dateVal, "Amnesia", pat1, vr, s1);
             system.encounterHistory.addEncounter(en1);
             system.encounterHistory.addEncounter(en);
         }

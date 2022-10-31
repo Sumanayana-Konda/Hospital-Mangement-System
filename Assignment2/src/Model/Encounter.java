@@ -17,7 +17,8 @@ public class Encounter {
     private VitalSigns vitalSign;
     private Doctor doctor;
 
-    public Encounter(Date encounterDate, String diagnosis, Patient patient, VitalSigns vitalSign, Doctor doctor) {
+    public Encounter(String Encounter_ID,Date encounterDate, String diagnosis, Patient patient, VitalSigns vitalSign, Doctor doctor) {
+       this.Encounter_ID = Encounter_ID;
         this.encounterDate = encounterDate;
         this.diagnosis = diagnosis;
         this.patient = patient;

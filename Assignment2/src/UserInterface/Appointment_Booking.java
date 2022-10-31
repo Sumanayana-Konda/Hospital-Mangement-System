@@ -143,7 +143,7 @@ Patient patient;
         for(Doctor doctor1 : ecoSystem.getDoctorDirectory().getDoctorList()){
         if(doctor.getSelectedItem().toString().equals(doctor1.getFirstName())){
         VitalSigns vt = new VitalSigns(0, 0, 0, 0, 0, 0, 0);
-        Encounter encounter = new Encounter(date.getDate(), "", patient, vt, doctor1); 
+        Encounter encounter = new Encounter(patient.getFirstName()+patient.getPatientId(), date.getDate(), "", patient, vt, doctor1); 
         ecoSystem.getEncounterHistory().addEncounter(encounter);
         JOptionPane.showMessageDialog(this, "Appointment Booked");
         }

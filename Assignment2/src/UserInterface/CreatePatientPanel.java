@@ -11,6 +11,7 @@ import Model.Person;
 import Model.House;
 import Model.Patient;
 import com.toedter.calendar.JDateChooser;
+import java.util.ArrayList;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComponent;
@@ -218,6 +219,11 @@ public class CreatePatientPanel extends javax.swing.JPanel {
         });
 
         city.setBackground(new java.awt.Color(153, 153, 255));
+        city.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cityItemStateChanged(evt);
+            }
+        });
         city.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cityActionPerformed(evt);
@@ -456,9 +462,9 @@ public class CreatePatientPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         boolean validated = false;
         boolean validatedOtherFields = false;
+        String selectedCity = city.getSelectedItem()==null?"":city.getSelectedItem().toString();
+        String selectedCommunity = community.getSelectedItem()==null?"":community.getSelectedItem().toString();
         String selectedGender = gender.getSelectedItem().toString();
-        String selectedCity = city.getSelectedItem().toString();
-        String selectedCommunity = community.getSelectedItem().toString();
         JDateChooser strtDt = dateOfBirth;
         if(!selectedCity.isEmpty() && !selectedCommunity.isEmpty() && !selectedGender.isEmpty() && strtDt!=null){
             validatedOtherFields = true;
@@ -565,16 +571,7 @@ public class CreatePatientPanel extends javax.swing.JPanel {
 
     private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
         // TODO add your handling code here:
-        community.removeAllItems();
-        for(Community c:ecoSystem.getCommunityList()){
-            community.setSelectedItem(null);
-            
-             if(c.getCity().getCity().equals(city.getSelectedItem().toString()))
-             {   
-                 community.addItem(c.getCommunity().toString());
-                 
-             }
-         }
+        
 
         
     }//GEN-LAST:event_cityActionPerformed
@@ -599,6 +596,19 @@ public class CreatePatientPanel extends javax.swing.JPanel {
          }
         community.setModel(mode1);*/
     }//GEN-LAST:event_communityItemStateChanged
+
+    private void cityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cityItemStateChanged
+        // TODO add your handling code here:
+        String cityName = city.getSelectedItem().toString();
+        ArrayList<String> communityBoxList = new ArrayList<String>();
+        for(Community c:ecoSystem.getCommunityList()){
+            if(c.getCity().getCity().equals(cityName)){
+                communityBoxList.add(c.getCommunity());
+            }
+        }
+        DefaultComboBoxModel communityModelList = new DefaultComboBoxModel(communityBoxList.toArray());
+        community.setModel(communityModelList);
+    }//GEN-LAST:event_cityItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
